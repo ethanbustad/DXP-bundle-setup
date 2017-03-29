@@ -4,20 +4,7 @@
 # Sets variables to use within script.
 # -----------------------------------------------------------------------------
 
-DESIRED_HOME_DIR_NAME=7.0.x
-FIX_PACK=de/liferay-fix-pack-de-11
-INDEX_NAME=ethan_local
-LIFERAY_HOME_PARENT_DIR=/mnt/shrd/data/app-servers/EE
-PORTAL_REPO_DIR=/mnt/shrd/repos/liferay-portal-ee
-
-# An array of properties as they should appear in portal-ext.properties.
-# Include at least database settings.
-PORTAL_EXTRA_PROPERTIES=(
-	"jdbc.default.driverClassName=com.mysql.jdbc.Driver"
-	"jdbc.default.password=test"
-	"jdbc.default.url=jdbc:mysql://localhost/vanilla_dxp?characterEncoding=UTF-8&useFastDateParsing=false&useUnicode=true"
-	"jdbc.default.username=test"
-)
+source variables.sh
 
 # --------------------------------------------------------------
 # Initializes the server for Liferay DXP.
