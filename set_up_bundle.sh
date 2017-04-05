@@ -6,24 +6,34 @@
 
 source variables.sh
 
+fetch_dependency () {
+	CACHE_DIR=".cache"
+	url=$1
+
+	mkdir -p $CACHE_DIR
+
+	md5=$(echo -n "$url" | md5sum | cut -f1 -d' ')
+
+	if [ ! -e $CACHE_DIR/$md5 ]
+	then
+		wget -q $url -O $CACHE_DIR/$md5
+	fi
+
+	echo "$CACHE_DIR/$md5"
+}
+
 # --------------------------------------------------------------
 # Initializes the server for Liferay DXP.
 # --------------------------------------------------------------
 
-echo "==================== Downloading DXP bundle... ===================="
-
-BUNDLE_BASE_URL="http://mirrors.lax.liferay.com/files.liferay.com/private/ee/portal/7.0.10.1/"
-BUNDLE_ZIP="liferay-dxp-digital-enterprise-tomcat-7.0-sp1-20161027112321352.zip"
-
-wget "$BUNDLE_BASE_URL$BUNDLE_ZIP"
 
 echo "================== Extracting bundle archive... ==================="
 
 mkdir $LIFERAY_HOME_PARENT_DIR/temp
 
-unzip -d $LIFERAY_HOME_PARENT_DIR/temp -q "$BUNDLE_ZIP"
+BUNDLE_ZIPFILE=`fetch_dependency "http://mirrors.lax.liferay.com/files.liferay.com/private/ee/portal/7.0.10.1/liferay-dxp-digital-enterprise-tomcat-7.0-sp1-20161027112321352.zip"`
 
-rm "$BUNDLE_ZIP"
+unzip -d $LIFERAY_HOME_PARENT_DIR/temp -q "$BUNDLE_ZIPFILE"
 
 rm -rf $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME
 
@@ -60,7 +70,9 @@ rm -rf $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/
 
 LATEST_PATCHING_TOOL=patching-tool-`curl --silent http://mirrors.lax.liferay.com/files.liferay.com/private/ee/fix-packs/patching-tool/LATEST-2.0.txt`.zip
 
-wget -nv http://mirrors.lax.liferay.com/files.liferay.com/private/ee/fix-packs/patching-tool/${LATEST_PATCHING_TOOL}; unzip -q ${LATEST_PATCHING_TOOL} -d $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME; rm ${LATEST_PATCHING_TOOL}
+PATCHING_TOOL_ZIPFILE=`fetch_dependency "http://mirrors.lax.liferay.com/files.liferay.com/private/ee/fix-packs/patching-tool/${LATEST_PATCHING_TOOL}"`
+
+unzip -d $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME -q "$PATCHING_TOOL_ZIPFILE"
 
 chmod u+x $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/*.sh
 
@@ -71,7 +83,9 @@ $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patching-tool.sh r
 
 rm -fr $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patches/*
 
-wget -nv http://mirrors.lax.liferay.com/files.liferay.com/private/ee/fix-packs/7.0.10/${FIX_PACK}-7010.zip -P $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patches
+FIXPACK_ZIPFILE=`fetch_dependency "http://mirrors.lax.liferay.com/files.liferay.com/private/ee/fix-packs/7.0.10/${FIX_PACK}-7010.zip"`
+
+cat "$FIXPACK_ZIPFILE" > $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patches/patch.zip
 
 PATCH_INFO=`$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patching-tool.sh info | grep '\[ x\]\|\[ D\]\|\[ o\]\|\[ s\]'`
 
