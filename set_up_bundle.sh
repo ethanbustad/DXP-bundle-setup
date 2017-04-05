@@ -60,7 +60,7 @@ rm -rf $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/
 
 LATEST_PATCHING_TOOL=patching-tool-`curl --silent http://mirrors.lax.liferay.com/files.liferay.com/private/ee/fix-packs/patching-tool/LATEST-2.0.txt`.zip
 
-wget -nv http://mirrors.lax.liferay.com/files.liferay.com/private/ee/fix-packs/patching-tool/${LATEST_PATCHING_TOOL} -O ${LATEST_PATCHING_TOOL}; unzip -q ${LATEST_PATCHING_TOOL} -d $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME; rm ${LATEST_PATCHING_TOOL}
+wget -nv http://mirrors.lax.liferay.com/files.liferay.com/private/ee/fix-packs/patching-tool/${LATEST_PATCHING_TOOL}; unzip -q ${LATEST_PATCHING_TOOL} -d $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME; rm ${LATEST_PATCHING_TOOL}
 
 chmod u+x $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/*.sh
 
