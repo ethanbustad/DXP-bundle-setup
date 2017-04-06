@@ -26,7 +26,6 @@ fetch_dependency () {
 # Initializes the server for Liferay DXP.
 # --------------------------------------------------------------
 
-
 echo "================== Extracting bundle archive... ==================="
 
 mkdir $LIFERAY_HOME_PARENT_DIR/temp
