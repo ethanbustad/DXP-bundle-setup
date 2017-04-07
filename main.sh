@@ -15,6 +15,8 @@ pr_branch=$2
 # Executes bundle setup script in background, outputting to log file.
 # -----------------------------------------------------------------------------
 
+mkdir -p $LOG_DIR
+
 bash ./set_up_bundle.sh > $LOG_DIR/initialize_bundle.log &
 
 # -----------------------------------------------------------------------------
