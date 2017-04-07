@@ -6,29 +6,13 @@
 
 source variables.sh
 
-fetch_dependency () {
-	CACHE_DIR=".cache"
-	url=$1
-
-	mkdir -p $CACHE_DIR
-
-	md5=$(echo -n "$url" | md5sum | cut -f1 -d' ')
-
-	if [ ! -e $CACHE_DIR/$md5 ]
-	then
-		wget -q $url -O $CACHE_DIR/$md5
-	fi
-
-	echo "$CACHE_DIR/$md5"
-}
-
 # --------------------------------------------------------------
 # Initializes the server for Liferay DXP.
 # --------------------------------------------------------------
 
 echo "================== Extracting bundle archive... ==================="
 
-mkdir $LIFERAY_HOME_PARENT_DIR/temp
+mkdir -p $LIFERAY_HOME_PARENT_DIR/temp
 
 BUNDLE_ZIPFILE=`fetch_dependency "http://mirrors.lax.liferay.com/files.liferay.com/private/ee/portal/7.0.10.1/liferay-dxp-digital-enterprise-tomcat-7.0-sp1-20161027112321352.zip"`
 
@@ -98,14 +82,9 @@ then
 	exit 0
 fi
 
-$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patching-tool.sh install
+$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patching-tool.sh install > $LOG_DIR/apply_fixpack.log
 $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patching-tool.sh update-plugins
 
 rm -fr $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/state
-
-echo "====================== Deploying plugins... ======================="
-
-cd $PORTAL_REPO_DIR/modules/private/apps/osb-testray/osb-testray-portlet && ant clean deploy && cd -
-cd $PORTAL_REPO_DIR/modules/private/apps/osb-testray/osb-testray-theme && $PORTAL_REPO_DIR/gradlew clean deploy && cd -
 
 echo "============================== Done. =============================="
