@@ -9,7 +9,7 @@ FIX_PACK=de/liferay-fix-pack-de-13
 INDEX_NAME=_PR_tester_
 LIFERAY_HOME_PARENT_DIR=/opt/java/liferay
 LOG_DIR=logs
-PORTAL_REPO_DIR=/usr/local/liferay-portal-ee
+PORTAL_REPO_DIR=/usr/local/repos/liferay-portal-ee
 
 # An array of properties as they should appear in portal-ext.properties.
 # Include at least database settings.
