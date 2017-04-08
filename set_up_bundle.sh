@@ -87,4 +87,12 @@ $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patching-tool.sh u
 
 rm -fr $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/state
 
+echo "======================== Starting portal... ======================="
+
+java /opt/java/liferay/tomcat/bin/catalina.sh > $LOG_DIR/catalina.log &
+
+LIFERAY_PID=$!
+
+echo "$LIFERAY_PID" > $LOG_DIR/liferay_pid.log
+
 echo "============================== Done. =============================="
