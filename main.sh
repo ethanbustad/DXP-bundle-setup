@@ -19,6 +19,24 @@ mkdir -p $LOG_DIR
 
 bash ./set_up_bundle.sh > $LOG_DIR/initialize_bundle.log &
 
+
+# -----------------------------------------------------------------------------
+# Sets up database
+# -----------------------------------------------------------------------------
+
+if ! type mysql > /dev/null
+then
+	echo "====================== Installing MariaDB... ======================"
+
+	export DEBIAN_FRONTEND=noninteractive
+
+	apt-get -q -y install mariadb-client-core-10.0
+fi
+
+echo "======================== Restoring data... ========================"
+
+mysql < database/create.sql
+
 # -----------------------------------------------------------------------------
 # Sets up tests
 # -----------------------------------------------------------------------------
