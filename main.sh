@@ -32,6 +32,11 @@ then
 
 	apt-get -q -y install mariadb-client-core-10.0
 	apt-get -q -y install mariadb-server-core-10.0
+	apt-get -q -y install mariadb-client-10.0
+	apt-get -q -y install mariadb-server-10.0
+
+	mysql_install_db
+	service mysql start
 fi
 
 echo "======================== Restoring data... ========================"
