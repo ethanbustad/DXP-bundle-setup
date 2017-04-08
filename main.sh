@@ -31,6 +31,7 @@ then
 	export DEBIAN_FRONTEND=noninteractive
 
 	apt-get -q -y install mariadb-client-core-10.0
+	apt-get -q -y install mariadb-server-core-10.0
 fi
 
 echo "======================== Restoring data... ========================"
