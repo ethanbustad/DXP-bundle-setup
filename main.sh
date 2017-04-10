@@ -47,10 +47,10 @@ mysql < database/create.sql
 # Sets up tests
 # -----------------------------------------------------------------------------
 
-echo "==================== Setting up portal repo... ===================="
-
 if [ ! -e $PORTAL_REPO_DIR ]
 then
+	echo "==================== Setting up portal repo... ===================="
+
 	PORTAL_TARGZ=`fetch_dependency "http://mirrors.lax.liferay.com/github.com/liferay/liferay-portal-ee.tar.gz"`
 
 	mkdir $PORTAL_REPO_DIR/../temp
@@ -74,7 +74,7 @@ ant setup-sdk
 
 echo "================ Waiting for bundle to be ready... ================"
 
-while grep --quiet "The installation was successful" $LOG_DIR/apply_fixpack.log
+until grep --quiet "The installation was successful" $LOG_DIR/apply_fixpack.log
 do
 	sleep 5s
 done
@@ -106,7 +106,7 @@ echo "=============== Waiting for Liferay to start up... ================"
 
 today=`date "+%F"`
 
-while grep --quiet "The installation was successful" $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/tomcat/logs/catalina.${today}.log
+until grep --quiet "The installation was successful" $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/tomcat/logs/catalina.${today}.log
 do
 	sleep 5s
 done
