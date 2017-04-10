@@ -62,13 +62,26 @@ fi
 
 echo "=================== Setting up relevant code... ==================="
 
+rebase_successful=true
+
 cd $PORTAL_REPO_DIR
+
+git fetch --no-tags $REMOTE_BASE_BRANCH
 
 git clean -dfx
 
-git fetch -f --no-tags $pr_repo ${pr_branch}
+git fetch -f --no-tags $pr_repo $pr_branch
 
 git checkout FETCH_HEAD
+
+git rebase $REMOTE_BASE_BRANCH
+
+if [ -e $PORTAL_REPO_DIR/.git/rebase-apply ]
+then
+	git rebase --abort
+
+	rebase_successful=false
+fi
 
 ant setup-sdk
 
@@ -83,6 +96,7 @@ echo "==================== Running backend tests... ====================="
 
 # ??
 # TODO
+# this is probably where we should handle the 'rebase_successful' variable
 
 echo "this is where we'd run backend tests"
 
