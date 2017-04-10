@@ -14,7 +14,7 @@ source variables.sh
 
 echo "======================== Stopping portal... ======================="
 
-cat $LOG_DIR/liferay_pid.log | xargs kill
+cat $LOG_DIR/liferay_pid.log | xargs kill -9
 
 sleep 10s
 
