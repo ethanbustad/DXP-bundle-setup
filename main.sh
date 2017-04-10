@@ -69,7 +69,7 @@ rebase_successful=true
 
 cd $PORTAL_REPO_DIR
 
-git fetch --no-tags $REMOTE_BASE_BRANCH
+git fetch --no-tags $REMOTE_BASE $REMOTE_BASE_BRANCH
 
 git clean -dfx
 
@@ -77,7 +77,7 @@ git fetch -f --no-tags $pr_repo $pr_branch
 
 git checkout FETCH_HEAD
 
-git rebase $REMOTE_BASE_BRANCH
+git rebase ${REMOTE_BASE}/${REMOTE_BASE_BRANCH}
 
 if [ -e $PORTAL_REPO_DIR/.git/rebase-apply ]
 then

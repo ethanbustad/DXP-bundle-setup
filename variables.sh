@@ -4,7 +4,8 @@
 # Sets variables to use within script.
 # -----------------------------------------------------------------------------
 
-REMOTE_BASE_BRANCH=upstream/ee-7.0.x
+REMOTE_BASE=upstream
+REMOTE_BASE_BRANCH=ee-7.0.x
 DESIRED_HOME_DIR_NAME=7.0.x
 FIX_PACK=de/liferay-fix-pack-de-13
 INDEX_NAME=_PR_tester_
