@@ -92,7 +92,7 @@ ant setup-sdk
 
 echo "================ Waiting for bundle to be ready... ================"
 
-until grep --quiet "The installation was successful" $LOG_DIR/apply_fixpack.log
+until grep -qs "The installation was successful" $LOG_DIR/apply_fixpack.log
 do
 	sleep 5s
 done
