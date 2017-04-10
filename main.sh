@@ -61,6 +61,8 @@ then
 
 	rmdir $PORTAL_REPO_DIR/temp/liferay-portal-ee
 	rmdir $PORTAL_REPO_DIR/temp
+
+	git --git-dir=$PORTAL_REPO_DIR/.git remote add upstream git@github.com:liferay/liferay-portal-ee.git
 fi
 
 echo "=================== Setting up relevant code... ==================="
