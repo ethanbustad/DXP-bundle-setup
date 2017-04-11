@@ -126,7 +126,7 @@ echo "this is where we'd run backend tests"
 echo "====================== Deploying modules... ======================="
 
 for MODULE in ${DEPLOYABLE_PORTAL_MODULES[@]}; do
-	cd $PORTAL_REPO_DIR/$MODULE
+	cd $PORTAL_REPO_DIR/modules/$MODULE
 
 	if [ -e $PORTAL_REPO_DIR/$MODULE/build.xml ]
 	then
