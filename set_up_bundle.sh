@@ -63,6 +63,8 @@ for FILENAME in configs/*; do
 	sed "s/indexNamePrefix = .*/indexNamePrefix = $INDEX_NAME/g" $FILENAME > $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/configs/$(basename "$FILENAME")
 done
 
+cp -br tomcat/ $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/tomcat/
+
 echo "======================= Applying fixpack... ======================="
 
 rm -rf $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/
