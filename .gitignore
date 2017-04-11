@@ -1,2 +1,6 @@
 .cache/*
+logs/
+
 variables-ext.sh
+
+license/license-portal-digitalenterprise-7.0ga1.xml
