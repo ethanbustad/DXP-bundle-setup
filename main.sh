@@ -17,14 +17,13 @@ pr_branch=$2
 
 mkdir -p $LOG_DIR
 
-bash ./set_up_bundle.sh > $LOG_DIR/initialize_bundle.log &
-
+bash ./set_up_bundle.sh > $LOG_DIR/initialize_bundle.log 2>&1 &
 
 # -----------------------------------------------------------------------------
 # Sets up database
 # -----------------------------------------------------------------------------
 
-if ! type mysql > /dev/null
+if ! type mysql > /dev/null 2>&1
 then
 	echo "====================== Installing MariaDB... ======================"
 
