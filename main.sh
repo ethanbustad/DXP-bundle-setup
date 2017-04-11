@@ -41,7 +41,7 @@ fi
 
 echo "======================== Restoring data... ========================"
 
-mysql < database/create.sql
+sudo mysql < database/create.sql
 
 # -----------------------------------------------------------------------------
 # Sets up tests

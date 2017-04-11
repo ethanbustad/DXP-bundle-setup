@@ -17,9 +17,9 @@ PORTAL_REPO_DIR=/usr/local/repos/liferay-portal-ee
 # Include at least database settings.
 PORTAL_EXTRA_PROPERTIES=(
 	"jdbc.default.driverClassName=com.mysql.jdbc.Driver"
-	"jdbc.default.password="
+	"jdbc.default.password=r3m3mb3r"
 	"jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&useFastDateParsing=false&useUnicode=true"
-	"jdbc.default.username="
+	"jdbc.default.username=pr_tester"
 )
 
 # An array of modules to deploy from liferay-portal-ee.
