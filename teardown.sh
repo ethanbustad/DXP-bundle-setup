@@ -20,7 +20,7 @@ sleep 10s
 
 echo "======================== Deleting portal... ======================="
 
-rm -rf /opt/java/liferay/*
+rm -rf $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME
 
 echo "======================= Dropping database... ======================"
 
