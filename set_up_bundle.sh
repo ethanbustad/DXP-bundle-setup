@@ -89,7 +89,7 @@ rm -fr $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/state
 
 echo "======================== Starting portal... ======================="
 
-java /opt/java/liferay/tomcat/bin/catalina.sh > $LOG_DIR/catalina.log &
+$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/tomcat/bin/catalina.sh run > $LOG_DIR/catalina.log 2>&1 &
 
 LIFERAY_PID=$!
 
