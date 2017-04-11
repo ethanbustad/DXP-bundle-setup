@@ -44,6 +44,21 @@ echo "======================== Restoring data... ========================"
 sudo mysql < database/create.sql
 
 # -----------------------------------------------------------------------------
+# Sets up ant
+# -----------------------------------------------------------------------------
+
+if ! type ant > /dev/null 2>&1
+then
+	echo "======================== Installing Ant... ========================"
+
+	export DEBIAN_FRONTEND=noninteractive
+
+	apt-get -q -y install ant
+
+	export ANT_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
+fi
+
+# -----------------------------------------------------------------------------
 # Sets up tests
 # -----------------------------------------------------------------------------
 
@@ -88,7 +103,7 @@ then
 	rebase_successful=false
 fi
 
-ant setup-sdk
+ant "-Dapp.server.deploy.dir=$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/deploy" setup-sdk
 
 echo "================ Waiting for bundle to be ready... ================"
 
