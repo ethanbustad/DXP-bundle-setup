@@ -10,7 +10,7 @@ DESIRED_HOME_DIR_NAME=7.0.x
 FIX_PACK=de/liferay-fix-pack-de-13
 INDEX_NAME=PR_tester_
 LIFERAY_HOME_PARENT_DIR=/opt/java/liferay
-LOG_DIR=logs
+LOG_DIR=/usr/local/repos/DXP-bundle-setup/logs
 PORTAL_REPO_DIR=/usr/local/repos/liferay-portal-ee
 
 # An array of properties as they should appear in portal-ext.properties.
