@@ -53,9 +53,9 @@ then
 	export DEBIAN_FRONTEND=noninteractive
 
 	apt-get -q -y install ant
-
-	export ANT_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
 fi
+
+export ANT_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
 
 # -----------------------------------------------------------------------------
 # Sets up tests
