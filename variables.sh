@@ -8,7 +8,7 @@ REMOTE_BASE=upstream
 REMOTE_BASE_BRANCH=ee-7.0.x
 DESIRED_HOME_DIR_NAME=7.0.x
 FIX_PACK=de/liferay-fix-pack-de-13
-INDEX_NAME=_PR_tester_
+INDEX_NAME=PR_tester_
 LIFERAY_HOME_PARENT_DIR=/opt/java/liferay
 LOG_DIR=logs
 PORTAL_REPO_DIR=/usr/local/repos/liferay-portal-ee
@@ -16,7 +16,7 @@ PORTAL_REPO_DIR=/usr/local/repos/liferay-portal-ee
 # An array of properties as they should appear in portal-ext.properties.
 # Include at least database settings.
 PORTAL_EXTRA_PROPERTIES=(
-	"jdbc.default.driverClassName=com.mysql.jdbc.Driver"
+	"jdbc.default.driverClassName=org.mariadb.jdbc.Driver"
 	"jdbc.default.password=r3m3mb3r"
 	"jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&useFastDateParsing=false&useUnicode=true"
 	"jdbc.default.username=pr_tester"
