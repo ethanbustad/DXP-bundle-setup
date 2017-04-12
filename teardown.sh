@@ -16,8 +16,6 @@ echo "======================== Stopping portal... ======================="
 
 cat $LOG_DIR/liferay_pid.log | xargs kill -9
 
-sleep 10s
-
 echo "======================== Deleting portal... ======================="
 
 rm -rf $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME
