@@ -94,7 +94,7 @@ git clean -dfx
 
 git fetch -f --no-tags $pr_repo $pr_branch
 
-git checkout FETCH_HEAD
+git checkout -f FETCH_HEAD
 
 git rebase ${REMOTE_BASE}/${REMOTE_BASE_BRANCH}
 
