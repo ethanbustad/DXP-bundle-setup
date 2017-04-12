@@ -43,7 +43,7 @@ fi
 
 echo "======================== Restoring data... ========================"
 
-sudo mysql < database/create.sql
+mysql < database/create.sql
 
 # -----------------------------------------------------------------------------
 # Sets up ant
