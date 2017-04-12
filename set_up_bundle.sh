@@ -33,7 +33,7 @@ cp license/* $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/deploy/
 
 echo "=================== Applying configurations... ===================="
 
-cp properties/* $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/tomcat/webapps/ROOT/WEB-INF/classes
+cp -b properties/* $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/tomcat/webapps/ROOT/WEB-INF/classes
 
 for PROPERTY in ${PORTAL_EXTRA_PROPERTIES[@]}; do
 	echo -e "\n$PROPERTY" >> $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/tomcat/webapps/ROOT/WEB-INF/classes/portal-ext.properties
