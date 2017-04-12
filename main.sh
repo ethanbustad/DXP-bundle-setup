@@ -85,7 +85,7 @@ echo "=================== Setting up relevant code... ==================="
 
 rebase_successful=true
 
-cd $PORTAL_REPO_DIR
+cd $PORTAL_REPO_DIR || exit 1
 
 git fetch --no-tags $REMOTE_BASE $REMOTE_BASE_BRANCH
 
