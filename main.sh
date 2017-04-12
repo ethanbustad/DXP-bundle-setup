@@ -140,9 +140,7 @@ done
 
 echo "=============== Waiting for Liferay to start up... ================"
 
-today=`date "+%F"`
-
-until grep -qs "Server startup" $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/tomcat/logs/catalina.${today}.log
+until grep -qs "Server startup" $LOG_DIR/catalina.log
 do
 	sleep 5s
 done
