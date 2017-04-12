@@ -1,4 +1,5 @@
-.cache/*
+.cache/
+liferay-portal-ee/
 logs/
 
 variables-ext.sh

@@ -12,7 +12,7 @@ pr_repo=$1
 pr_branch=$2
 
 eval `ssh-agent -s`
-ssh-add /root/.ssh/id_rsa_ethan.bustad_liferay.com
+ssh-add ~/.ssh/id_rsa_ethan.bustad_liferay.com
 
 # -----------------------------------------------------------------------------
 # Executes bundle setup script in background, outputting to log file.

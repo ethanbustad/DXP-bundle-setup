@@ -75,8 +75,6 @@ then
 	echo "Unable to patch:"
 	echo "${PATCH_INFO}"
 
-	rm /tmp/peek_redeploy.lock
-
 	exit 0
 fi
 
