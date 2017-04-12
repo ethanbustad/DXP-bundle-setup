@@ -62,6 +62,8 @@ echo -e "patching.mode=binary\nwar.path=../tomcat/webapps/ROOT/\nglobal.lib.path
 $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patching-tool.sh auto-discovery ..${PATCHING_DIR}
 $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patching-tool.sh revert
 
+rm -fr $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patches/*
+
 FIXPACK_ZIPFILE=`fetch_dependency "http://mirrors.lax.liferay.com/files.liferay.com/private/ee/fix-packs/7.0.10/${FIX_PACK}-7010.zip"`
 
 cat "$FIXPACK_ZIPFILE" > $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool/patches/patch.zip
