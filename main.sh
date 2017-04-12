@@ -43,7 +43,7 @@ fi
 
 echo "======================== Restoring data... ========================"
 
-mysql -u pr_tester -p testrayprtester < database/create.sql
+mysql -u pr_tester -ptestrayprtester < database/create.sql
 
 # -----------------------------------------------------------------------------
 # Sets up ant
