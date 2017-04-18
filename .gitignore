@@ -1,4 +1,5 @@
 .cache/
+bundles/
 liferay-portal-ee/
 logs/
 
