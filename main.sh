@@ -68,11 +68,9 @@ if [ ! -e $PORTAL_REPO_DIR ]
 then
 	echo "==================== Setting up portal repo... ===================="
 
-	PORTAL_TARGZ=`fetch_dependency "http://mirrors.lax.liferay.com/github.com/liferay/liferay-portal-ee.tar.gz"`
-
 	mkdir -p $PORTAL_REPO_DIR/temp
 
-	tar -x -f $PORTAL_TARGZ --directory $PORTAL_REPO_DIR/temp
+	curl "http://mirrors.lax.liferay.com/github.com/liferay/liferay-portal-ee.tar.gz" | tar -x -z --directory $PORTAL_REPO_DIR/temp
 
 	mv $PORTAL_REPO_DIR/temp/liferay-portal-ee/{*,.[^.]*} $PORTAL_REPO_DIR
 
