@@ -7,7 +7,7 @@
 REMOTE_BASE=upstream
 REMOTE_BASE_BRANCH=ee-7.0.x
 DESIRED_HOME_DIR_NAME=7.0.x
-FIX_PACK=de/liferay-fix-pack-de-13
+FIX_PACK=de/liferay-fix-pack-de-16
 INDEX_NAME=PR_tester_
 LIFERAY_HOME_PARENT_DIR=bundles
 LOG_DIR=logs
