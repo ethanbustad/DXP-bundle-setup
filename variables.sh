@@ -21,6 +21,10 @@ then
 	source variables-ext.sh
 fi
 
+if [ ! -z "$MYSQL_USER_PASSWORD" ]; then
+	MYSQL_PASSWORD_ARGUMENT="-p${MYSQL_USER_PASSWORD}"
+fi
+
 # An array of properties as they should appear in portal-ext.properties.
 # Include at least database settings.
 PORTAL_EXTRA_PROPERTIES=(

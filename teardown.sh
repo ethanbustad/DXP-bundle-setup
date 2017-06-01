@@ -22,7 +22,7 @@ rm -rf $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME
 
 echo "======================= Dropping database... ======================"
 
-mysql -e "drop database lportal;"
+mysql -u $MYSQL_USER_NAME $MYSQL_PASSWORD_ARGUMENT -e "drop database lportal;"
 
 echo "============================= Done... ============================="
 
