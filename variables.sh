@@ -4,8 +4,6 @@
 # Sets variables to use within script.
 # -----------------------------------------------------------------------------
 
-REMOTE_BASE=upstream
-REMOTE_BASE_BRANCH=ee-7.0.x
 DESIRED_HOME_DIR_NAME=7.0.x
 FIX_PACK=de/liferay-fix-pack-de-16
 INDEX_NAME=PR_tester_
@@ -14,6 +12,8 @@ LOG_DIR=logs
 MYSQL_USER_NAME=pr_tester
 MYSQL_USER_PASSWORD=testrayprtester
 PORTAL_REPO_DIR=liferay-portal-ee
+REMOTE_BASE=upstream
+REMOTE_BASE_BRANCH=ee-7.0.x
 SSH_KEY_FILE=~/.ssh/id_rsa_ethan.bustad_liferay.com
 
 # An array of properties as they should appear in portal-ext.properties.
