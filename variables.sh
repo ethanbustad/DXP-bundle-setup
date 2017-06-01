@@ -16,6 +16,11 @@ REMOTE_BASE=upstream
 REMOTE_BASE_BRANCH=ee-7.0.x
 SSH_KEY_FILE=~/.ssh/id_rsa_ethan.bustad_liferay.com
 
+if [ -e variables-ext.sh ]
+then
+	source variables-ext.sh
+fi
+
 # An array of properties as they should appear in portal-ext.properties.
 # Include at least database settings.
 PORTAL_EXTRA_PROPERTIES=(
