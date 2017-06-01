@@ -43,7 +43,7 @@ fi
 
 echo "======================== Restoring data... ========================"
 
-mysql -u pr_tester -ptestrayprtester < database/create.sql
+mysql -u ${MYSQL_USER_NAME} -p${MYSQL_USER_PASSWORD} < database/create.sql
 
 # -----------------------------------------------------------------------------
 # Sets up ant
