@@ -20,9 +20,9 @@ SSH_KEY_FILE=~/.ssh/id_rsa_ethan.bustad_liferay.com
 # Include at least database settings.
 PORTAL_EXTRA_PROPERTIES=(
 	"jdbc.default.driverClassName=org.mariadb.jdbc.Driver"
-	"jdbc.default.password=r3m3mb3r"
+	"jdbc.default.password=$MYSQL_USER_PASSWORD"
 	"jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&useFastDateParsing=false&useUnicode=true"
-	"jdbc.default.username=pr_tester"
+	"jdbc.default.username=$MYSQL_USER_NAME"
 )
 
 # An array of modules to deploy from liferay-portal-ee.
