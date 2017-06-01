@@ -14,6 +14,7 @@ LOG_DIR=logs
 MYSQL_USER_NAME=pr_tester
 MYSQL_USER_PASSWORD=testrayprtester
 PORTAL_REPO_DIR=liferay-portal-ee
+SSH_KEY_FILE=~/.ssh/id_rsa_ethan.bustad_liferay.com
 
 # An array of properties as they should appear in portal-ext.properties.
 # Include at least database settings.
