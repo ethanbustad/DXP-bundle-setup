@@ -105,7 +105,7 @@ then
 
 	subrepo_parent_dir="$(dirname "$SUBREPO_LOCATION")"
 
-	unzip -d "$subrepo_parent_dir" -q "$subrepo_zipfile"
+	tar -x -z -f "$subrepo_zipfile" --directory "$subrepo_parent_dir"
 
 	mv $subrepo_parent_dir/$SUBREPO_NAME $SUBREPO_LOCATION
 
