@@ -127,7 +127,7 @@ then
 	rebase_successful=false
 fi
 
-ant "-Dapp.server.parent.dir=$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME" setup-sdk
+ant "-Dapp.server.parent.dir=$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME" -f $PORTAL_REPO_DIR/build.xml setup-sdk
 
 echo "================ Waiting for bundle to be ready... ================"
 
