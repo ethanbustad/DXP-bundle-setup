@@ -95,9 +95,7 @@ then
 	remote_base=$SUBREPO_REMOTE_BASE
 	remote_base_branch=$SUBREPO_REMOTE_BASE_BRANCH
 
-	git branch -D base
-	git fetch $PORTAL_REMOTE_BASE $PORTAL_REMOTE_BASE_BRANCH:base
-	git checkout base
+	git checkout -f FETCH_HEAD
 
 	subrepo_zipfile=`fetch_dependency "http://mirrors.lax.liferay.com/github.com/liferay/${SUBREPO_NAME}.tar.gz"`
 
