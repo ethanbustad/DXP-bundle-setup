@@ -154,7 +154,7 @@ echo "====================== Deploying modules... ======================="
 for MODULE in ${DEPLOYABLE_PORTAL_MODULES[@]}; do
 	cd $PORTAL_REPO_DIR/modules/$MODULE
 
-	if [ -e $PORTAL_REPO_DIR/$MODULE/build.xml ]
+	if [ -e $PORTAL_REPO_DIR/modules/$MODULE/build.xml ]
 	then
 		ant "-Dapp.server.deploy.dir=$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/deploy" deploy
 	else
