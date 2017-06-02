@@ -50,7 +50,7 @@ DEPLOYABLE_PORTAL_MODULES=(
 )
 
 fetch_dependency () {
-	CACHE_DIR=".cache"
+	CACHE_DIR="$BASE_DIR/.cache"
 	url=$1
 
 	mkdir -p $CACHE_DIR
