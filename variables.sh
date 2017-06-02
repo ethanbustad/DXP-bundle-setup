@@ -12,9 +12,13 @@ LOG_DIR=logs
 MYSQL_USER_NAME=pr_tester
 MYSQL_USER_PASSWORD=testrayprtester
 PORTAL_REPO_DIR=liferay-portal-ee
-REMOTE_BASE=upstream
-REMOTE_BASE_BRANCH=ee-7.0.x
+PORTAL_REMOTE_BASE=git@github.com:liferay/liferay-portal-ee.git
+PORTAL_REMOTE_BASE_BRANCH=ee-7.0.x
 SSH_KEY_FILE=~/.ssh/id_rsa_ethan.bustad_liferay.com
+SUBREPO_LOCATION=modules/private/apps/osb-testray
+SUBREPO_NAME=com-liferay-osb-testray-private
+SUBREPO_REMOTE_BASE=git@github.com:liferay/$SUBREPO_NAME
+SUBREPO_REMOTE_BASE_BRANCH=7.0.x-private
 
 if [ -e variables-ext.sh ]
 then

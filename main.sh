@@ -75,25 +75,52 @@ then
 	mv $PORTAL_REPO_DIR/temp/liferay-portal-ee/{*,.[^.]*} $PORTAL_REPO_DIR
 
 	rmdir $PORTAL_REPO_DIR/temp/liferay-portal-ee $PORTAL_REPO_DIR/temp &
-
-	git --git-dir=$PORTAL_REPO_DIR/.git remote add upstream git@github.com:liferay/liferay-portal-ee.git
 fi
 
 echo "=================== Setting up relevant code... ==================="
+
+remote_base=$PORTAL_REMOTE_BASE
+remote_base_branch=$PORTAL_REMOTE_BASE_BRANCH
 
 rebase_successful=true
 
 cd $PORTAL_REPO_DIR || exit 1
 
-git fetch --no-tags $REMOTE_BASE $REMOTE_BASE_BRANCH
+git fetch --no-tags $PORTAL_REMOTE_BASE $PORTAL_REMOTE_BASE_BRANCH
 
 git clean -dfx
+
+if [ ! -z $SUBREPO_NAME ]
+then
+	remote_base=$SUBREPO_REMOTE_BASE
+	remote_base_branch=$SUBREPO_REMOTE_BASE_BRANCH
+
+	git branch -D base
+	git fetch $PORTAL_REMOTE_BASE $PORTAL_REMOTE_BASE_BRANCH:base
+	git checkout base
+
+	subrepo_zipfile=`fetch_dependency "http://mirrors.lax.liferay.com/github.com/liferay/${SUBREPO_NAME}.tar.gz"`
+
+	rm -rf $PORTAL_REPO_DIR/$SUBREPO_LOCATION
+
+	subrepo_parent_dir="$(dirname "$PORTAL_REPO_DIR/$SUBREPO_LOCATION")"
+
+	unzip -d "$subrepo_parent_dir" -q "$subrepo_zipfile"
+
+	mv $subrepo_parent_dir/$SUBREPO_NAME $PORTAL_REPO_DIR/$SUBREPO_LOCATION
+
+	cd $PORTAL_REPO_DIR/$SUBREPO_LOCATION || exit 1
+
+	git fetch --no-tags $SUBREPO_REMOTE_BASE $SUBREPO_REMOTE_BASE_BRANCH
+
+	git clean -dfx
+fi
 
 git fetch -f --no-tags $pr_repo $pr_branch
 
 git checkout -f FETCH_HEAD
 
-git rebase ${REMOTE_BASE}/${REMOTE_BASE_BRANCH}
+git rebase ${remote_base}/${remote_base_branch}
 
 if [ -e $PORTAL_REPO_DIR/.git/rebase-apply ]
 then
