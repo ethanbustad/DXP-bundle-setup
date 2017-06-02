@@ -101,15 +101,15 @@ then
 
 	subrepo_zipfile=`fetch_dependency "http://mirrors.lax.liferay.com/github.com/liferay/${SUBREPO_NAME}.tar.gz"`
 
-	rm -rf $PORTAL_REPO_DIR/$SUBREPO_LOCATION
+	rm -rf $SUBREPO_LOCATION
 
-	subrepo_parent_dir="$(dirname "$PORTAL_REPO_DIR/$SUBREPO_LOCATION")"
+	subrepo_parent_dir="$(dirname "$SUBREPO_LOCATION")"
 
 	unzip -d "$subrepo_parent_dir" -q "$subrepo_zipfile"
 
-	mv $subrepo_parent_dir/$SUBREPO_NAME $PORTAL_REPO_DIR/$SUBREPO_LOCATION
+	mv $subrepo_parent_dir/$SUBREPO_NAME $SUBREPO_LOCATION
 
-	cd $PORTAL_REPO_DIR/$SUBREPO_LOCATION || exit 1
+	cd $SUBREPO_LOCATION || exit 1
 
 	git fetch --no-tags $SUBREPO_REMOTE_BASE $SUBREPO_REMOTE_BASE_BRANCH
 

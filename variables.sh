@@ -4,18 +4,20 @@
 # Sets variables to use within script.
 # -----------------------------------------------------------------------------
 
+BASE_DIR="$(pwd)"
+
 DESIRED_HOME_DIR_NAME=7.0.x
 FIX_PACK=de/liferay-fix-pack-de-16
 INDEX_NAME=PR_tester_
-LIFERAY_HOME_PARENT_DIR=bundles
-LOG_DIR=logs
+LIFERAY_HOME_PARENT_DIR=$BASE_DIR/bundles
+LOG_DIR=$BASE_DIR/logs
 MYSQL_USER_NAME=pr_tester
 MYSQL_USER_PASSWORD=testrayprtester
-PORTAL_REPO_DIR=liferay-portal-ee
+PORTAL_REPO_DIR=$BASE_DIR/liferay-portal-ee
 PORTAL_REMOTE_BASE=git@github.com:liferay/liferay-portal-ee.git
 PORTAL_REMOTE_BASE_BRANCH=ee-7.0.x
 SSH_KEY_FILE=~/.ssh/id_rsa_ethan.bustad_liferay.com
-SUBREPO_LOCATION=modules/private/apps/osb-testray
+SUBREPO_LOCATION=$PORTAL_REPO_DIR/modules/private/apps/osb-testray
 SUBREPO_NAME=com-liferay-osb-testray-private
 SUBREPO_REMOTE_BASE=git@github.com:liferay/$SUBREPO_NAME
 SUBREPO_REMOTE_BASE_BRANCH=7.0.x-private
