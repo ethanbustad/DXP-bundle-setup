@@ -167,8 +167,6 @@ echo "=============== Waiting for Liferay to start up... ================"
 until grep -qs "Server startup" $LOG_DIR/catalina.log
 do
 	sleep 5s
-
-	((j++)) && ((j==60)) && exit 1
 done
 
 echo "==================== Running runtime tests... ====================="
