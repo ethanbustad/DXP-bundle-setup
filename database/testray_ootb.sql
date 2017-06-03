@@ -24,6 +24,14 @@ CREATE TABLE `Account_` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `Account_`
+--
+
+LOCK TABLES `Account_` WRITE;
+INSERT INTO `Account_` VALUES (0,20118,20116,0,NULL,'2017-06-03 00:42:22.899000','2017-06-03 00:42:22.899000',0,'Liferay DXP',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Address`
 --
 
@@ -70,6 +78,14 @@ CREATE TABLE `AnnouncementsDelivery` (
   PRIMARY KEY (`deliveryId`),
   UNIQUE KEY `IX_BA4413D5` (`userId`,`type_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `AnnouncementsDelivery`
+--
+
+LOCK TABLES `AnnouncementsDelivery` WRITE;
+INSERT INTO `AnnouncementsDelivery` VALUES (31307,20116,31301,'general',0,0,0),(31308,20116,31301,'news',0,0,0),(31309,20116,31301,'test',0,0,0);
+UNLOCK TABLES;
 
 --
 -- Table structure for table `AnnouncementsEntry`
@@ -241,6 +257,14 @@ CREATE TABLE `AssetEntry` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `AssetEntry`
+--
+
+LOCK TABLES `AssetEntry` WRITE;
+INSERT INTO `AssetEntry` VALUES (20139,20133,20116,20120,NULL,'2017-06-03 00:42:24.013000','2017-06-03 00:42:24.013000',20047,20137,'ab5865f5-96b0-81c6-7014-6d8f84e1148c',0,1,0,NULL,NULL,NULL,NULL,'text/html','Control Panel','','',NULL,NULL,0,0,0,0),(20148,20143,20116,20120,NULL,'2017-06-03 00:42:24.180000','2017-06-03 00:42:24.180000',20047,20146,'eff120d8-eb01-d9c0-a1a2-b30663af9427',0,1,0,NULL,NULL,NULL,NULL,'text/html','Welcome','','',NULL,NULL,0,0,0,0),(20161,20152,20116,20156,'Test Test','2017-06-03 00:42:24.575000','2017-06-03 00:42:24.575000',20087,20156,'c58b5756-7f65-79b7-35f5-d7cb3fc7ab4e',0,1,0,NULL,NULL,NULL,NULL,NULL,'Test Test','','',NULL,NULL,0,0,0,0),(20165,20140,20116,20120,NULL,'2017-06-03 00:42:24.771000','2017-06-03 00:42:24.771000',20047,20162,'1ab2b661-3b4e-b797-3082-b663db555c18',0,1,0,NULL,NULL,NULL,NULL,'text/html','Shared','','',NULL,NULL,0,0,0,0),(31015,31002,20116,20120,NULL,'2017-06-03 00:44:41.397000','2017-06-03 00:44:41.397000',20047,31013,'f1c033b3-c117-7701-63d3-20c4286de162',0,1,0,NULL,NULL,NULL,NULL,'text/html','Welcome','','',NULL,NULL,0,0,0,0),(31086,31081,20116,20120,NULL,'2017-06-03 00:44:59.390000','2017-06-03 00:44:59.390000',20047,31084,'ee592602-f485-dcb7-b76b-4ca242289251',0,1,0,NULL,NULL,NULL,NULL,'text/html','Content Display Page','','',NULL,NULL,0,0,0,0),(31149,31144,20116,20120,NULL,'2017-06-03 00:45:07.847000','2017-06-03 00:45:07.847000',20047,31147,'849cf9da-5b21-d0d4-3a1d-144eb04cde8b',0,1,0,NULL,NULL,NULL,NULL,'text/html','Wiki','','',NULL,NULL,0,0,0,0),(31163,31152,20116,20120,NULL,'2017-06-03 00:45:07.989000','2017-06-03 00:45:07.989000',20047,31161,'7bb22e84-99c7-12db-b9e6-ccf6e97d4f94',0,1,0,NULL,NULL,NULL,NULL,'text/html','Home','','',NULL,NULL,0,0,0,0),(31167,31152,20116,20120,NULL,'2017-06-03 00:45:08.058000','2017-06-03 00:45:08.058000',20047,31165,'2bdf9b7b-b250-3936-1ae5-6eb8c2588db6',0,1,0,NULL,NULL,NULL,NULL,'text/html','Wiki','','',NULL,NULL,0,0,0,0),(31177,31172,20116,20120,NULL,'2017-06-03 00:45:08.427000','2017-06-03 00:45:08.427000',20047,31175,'ce06ed44-8623-fde5-730e-b9364cabbfca',0,1,0,NULL,NULL,NULL,NULL,'text/html','Blog','','',NULL,NULL,0,0,0,0),(31208,31197,20116,20120,NULL,'2017-06-03 00:45:10.448000','2017-06-03 00:45:10.448000',20047,31206,'2186cde1-1553-d8e6-6741-20ded4f4bf9b',0,1,0,NULL,NULL,NULL,NULL,'text/html','Home','','',NULL,NULL,0,0,0,0),(31212,31197,20116,20120,NULL,'2017-06-03 00:45:10.496000','2017-06-03 00:45:10.496000',20047,31210,'f9f7e941-2e1c-839d-993f-59efe0f29844',0,1,0,NULL,NULL,NULL,NULL,'text/html','Documents and Media','','',NULL,NULL,0,0,0,0),(31216,31197,20116,20120,NULL,'2017-06-03 00:45:10.538000','2017-06-03 00:45:10.538000',20047,31214,'82fa815c-20a4-bf52-b1a5-3d24656402d9',0,1,0,NULL,NULL,NULL,NULL,'text/html','News','','',NULL,NULL,0,0,0,0),(31246,20158,20116,20156,'Test Test','2017-06-03 00:46:35.798000','2017-06-03 00:46:35.798000',20047,31244,'cb6618a5-cdbe-b969-1b92-1f6055377dbe',0,1,0,NULL,NULL,NULL,NULL,'text/html','Welcome','','',NULL,NULL,0,0,0,0),(31249,20158,20116,20156,'Test Test','2017-06-03 00:46:35.831000','2017-06-03 00:46:35.831000',20047,31247,'cf7318c2-870c-1c2c-05fd-288f369ddabe',0,1,0,NULL,NULL,NULL,NULL,'text/html','Welcome','','',NULL,NULL,0,0,0,0),(31263,20143,20116,20156,'Test Test','2017-06-03 00:46:57.093000','2017-06-03 00:46:57.167000',27704,31254,'b0b3ffaa-aba2-2cad-3c8d-3abb6c715408',0,1,1,NULL,NULL,'2017-06-03 00:46:57.093000',NULL,'text','<?xml version=\'1.0\' encoding=\'UTF-8\'?><root available-locales=\"en_US\" default-locale=\"en_US\"><Name language-id=\"en_US\">Liferay DXP</Name></root>','','',NULL,NULL,0,0,0,0),(31306,20152,20116,20156,'Test Test','2017-06-03 00:49:07.170000','2017-06-03 00:51:32.694000',20087,31301,'caa5bd34-4ed1-c0b9-57c7-0a90f54de7bf',0,1,0,NULL,NULL,NULL,NULL,NULL,'Sir Testalot','','',NULL,NULL,0,0,0,0);
+UNLOCK TABLES;
+
+--
 -- Table structure for table `AssetLink`
 --
 
@@ -321,6 +345,14 @@ CREATE TABLE `AssetVocabulary` (
   KEY `IX_B22D908C` (`companyId`),
   KEY `IX_C4E6FD10` (`uuid_`,`companyId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `AssetVocabulary`
+--
+
+LOCK TABLES `AssetVocabulary` WRITE;
+INSERT INTO `AssetVocabulary` VALUES ('3977ed49-f60e-57c8-1052-2cd78863fe41',20164,20152,20116,20120,NULL,'2017-06-03 00:42:24.791000','2017-06-03 00:42:24.791000','Topic','<?xml version=\'1.0\' encoding=\'UTF-8\'?><root available-locales=\"en_US\" default-locale=\"en_US\"><Title language-id=\"en_US\">Topic</Title></root>',NULL,NULL,NULL);
+UNLOCK TABLES;
 
 --
 -- Table structure for table `Audit_AuditEvent`
@@ -1081,6 +1113,14 @@ CREATE TABLE `DDMStructureLink` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `DDMStructureLink`
+--
+
+LOCK TABLES `DDMStructureLink` WRITE;
+INSERT INTO `DDMStructureLink` VALUES (30130,20116,20017,30126,30127),(30135,20116,20017,30131,30120),(30136,20116,20017,30131,30132),(30141,20116,20017,30137,30117),(30142,20116,20017,30137,30138),(30147,20116,20017,30143,30144),(30148,20116,20017,30143,30123);
+UNLOCK TABLES;
+
+--
 -- Table structure for table `DDMStructureVersion`
 --
 
@@ -1748,6 +1788,14 @@ CREATE TABLE `Image` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `Image`
+--
+
+LOCK TABLES `Image` WRITE;
+INSERT INTO `Image` VALUES (0,20171,20116,'2017-06-03 00:42:25.102000','png',256,256,39937);
+UNLOCK TABLES;
+
+--
 -- Table structure for table `JournalArticle`
 --
 
@@ -1963,6 +2011,14 @@ CREATE TABLE `KaleoAction` (
   KEY `IX_4B2545E8` (`kaleoClassName`,`kaleoClassPK`,`executionType`),
   KEY `IX_F95A622` (`kaleoDefinitionId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `KaleoAction`
+--
+
+LOCK TABLES `KaleoAction` WRITE;
+INSERT INTO `KaleoAction` VALUES (29005,0,20116,20120,NULL,'2017-06-03 00:42:35.486000','2017-06-03 00:42:35.486000','com.liferay.portal.workflow.kaleo.model.KaleoNode',29004,29003,'approved','approve',NULL,'onEntry','\n					\n						import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;\n						import com.liferay.portal.kernel.workflow.WorkflowConstants;\n\n						WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus(\"approved\"), workflowContext);\n					\n				','groovy',NULL,0),(29024,0,20116,20120,NULL,'2017-06-03 00:42:35.570000','2017-06-03 00:42:35.570000','com.liferay.portal.workflow.kaleo.model.KaleoNode',29023,29003,'update','reject',NULL,'onAssignment','\n					\n						import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;\n						import com.liferay.portal.kernel.workflow.WorkflowConstants;\n\n						WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus(\"denied\"), workflowContext);\n						WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus(\"pending\"), workflowContext);\n					\n				','groovy',NULL,0);
+UNLOCK TABLES;
 
 --
 -- Table structure for table `KaleoCondition`
@@ -4697,6 +4753,14 @@ CREATE TABLE `SAPEntry` (
   KEY `IX_90740311` (`companyId`,`name`),
   KEY `IX_AAAEBA0A` (`uuid_`,`companyId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `SAPEntry`
+--
+
+LOCK TABLES `SAPEntry` WRITE;
+INSERT INTO `SAPEntry` VALUES ('b02928ae-c6ab-a436-6d41-5961e093149d',29403,20116,20120,NULL,'2017-06-03 00:42:40.290000','2017-06-03 00:42:40.290000','com.liferay.sync.service.SyncDLObjectService#getSyncContext',1,1,'SYNC_DEFAULT','<?xml version=\'1.0\' encoding=\'UTF-8\'?><root available-locales=\"en_US\" default-locale=\"en_US\"><Title language-id=\"en_US\">SYNC_DEFAULT</Title></root>'),('90a21a56-c614-a24e-9c9b-7a43bb3cfdcc',29404,20116,20120,NULL,'2017-06-03 00:42:40.302000','2017-06-03 00:42:40.302000','com.liferay.sync.service.*',0,1,'SYNC_TOKEN','<?xml version=\'1.0\' encoding=\'UTF-8\'?><root available-locales=\"en_US\" default-locale=\"en_US\"><Title language-id=\"en_US\">SYNC_TOKEN</Title></root>'),('3c805e0c-0b59-b481-bc1b-79e80d242eac',29405,20116,20120,NULL,'2017-06-03 00:42:40.317000','2017-06-03 00:42:40.317000','com.liferay.calendar.service.CalendarBookingService#search\ncom.liferay.calendar.service.CalendarBookingService#searchCount',1,1,'CALENDAR_DEFAULT','<?xml version=\'1.0\' encoding=\'UTF-8\'?><root available-locales=\"en_US,zh_CN,es_ES,ja_JP,nl_NL,hu_HU,pt_BR,de_DE,iw_IL,fi_FI,ca_ES,fr_FR,\" default-locale=\"en_US\"><Title language-id=\"zh_CN\">公众进入日历搜索 API (Automatic Translation)</Title><Title language-id=\"es_ES\">Acceso público a la búsqueda de calendario API (Automatic Translation)</Title><Title language-id=\"ja_JP\">Public Access to the Calendar Search API (Automatic Copy)</Title><Title language-id=\"nl_NL\">Public Access to the Calendar Search API (Automatic Copy)</Title><Title language-id=\"hu_HU\">A naptár Search API való nyilvános hozzáférés (Automatic Translation)</Title><Title language-id=\"pt_BR\">Acesso do público à busca de calendário API (Automatic Translation)</Title><Title language-id=\"de_DE\">Öffentlicher Zugriff auf Such-API des Kalenders</Title><Title language-id=\"iw_IL\">גישה ציבורית החיפוש לוח שנה API (Automatic Translation)</Title><Title language-id=\"fi_FI\">Public Access to the Calendar Search API (Automatic Copy)</Title><Title language-id=\"ca_ES\">Accés públic a l\'API de cerca de calendari (Automatic Translation)</Title><Title language-id=\"fr_FR\">Accès du public à la recherche de calendrier API (Automatic Translation)</Title><Title language-id=\"en_US\">Public Access to the Calendar Search API</Title></root>'),('2956d7de-6f1d-90a3-d6b2-492a5aa2fddc',30153,20116,20120,NULL,'2017-06-03 00:44:27.548000','2017-06-03 00:44:27.548000','com.liferay.portal.kernel.service.CountryService#getCountries\ncom.liferay.portal.kernel.service.RegionService#getRegions',1,1,'SYSTEM_DEFAULT','<?xml version=\'1.0\' encoding=\'UTF-8\'?><root available-locales=\"en_US\" default-locale=\"en_US\"><Title language-id=\"en_US\">System Service Access Policy Applied on Every Request</Title></root>'),('ac182920-3b68-d8d4-58db-0a6577bbff4c',30154,20116,20120,NULL,'2017-06-03 00:44:27.562000','2017-06-03 00:44:27.562000','*',0,1,'SYSTEM_USER_PASSWORD','<?xml version=\'1.0\' encoding=\'UTF-8\'?><root available-locales=\"en_US\" default-locale=\"en_US\"><Title language-id=\"en_US\">System Service Access Policy for Requests Authenticated Using User Password</Title></root>');
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ServiceComponent`
