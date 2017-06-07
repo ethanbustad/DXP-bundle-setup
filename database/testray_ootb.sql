@@ -3527,6 +3527,16 @@ CREATE TABLE `OSB_TestrayCaseType` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Data for table `OSB_TestrayCaseType`
+--
+
+LOCK TABLES `OSB_TestrayCaseType` WRITE;
+INSERT INTO `OSB_TestrayCaseType` VALUES
+  (1001,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Automated Functional Test','Automated Functional Test'),
+  (1002,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Manual Use Case','Manual Use Case');
+UNLOCK TABLES;
+
+--
 -- Table structure for table `OSB_TestrayCases_TestrayComponents`
 --
 
@@ -3598,6 +3608,19 @@ CREATE TABLE `OSB_TestrayFactorCategory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Data for table `OSB_TestrayFactorCategory`
+--
+
+LOCK TABLES `OSB_TestrayFactorCategory` WRITE;
+INSERT INTO `OSB_TestrayFactorCategory` VALUES
+  (1011,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Application Server'),
+  (1012,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Browser'),
+  (1013,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Database'),
+  (1014,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Java JDK'),
+  (1015,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Operating System');
+UNLOCK TABLES;
+
+--
 -- Table structure for table `OSB_TestrayFactorOption`
 --
 
@@ -3613,6 +3636,19 @@ CREATE TABLE `OSB_TestrayFactorOption` (
   `name` varchar(75) DEFAULT NULL,
   PRIMARY KEY (`testrayFactorOptionId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Data for table `OSB_TestrayFactorOption`
+--
+
+LOCK TABLES `OSB_TestrayFactorOption` WRITE;
+INSERT INTO `OSB_TestrayFactorOption` VALUES
+  (1021,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000',1011,'Tomcat 8.0'),
+  (1022,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000',1012,'Firefox 38.0'),
+  (1023,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000',1013,'MySQL 5.6'),
+  (1024,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000',1014,'Oracle JDK 7 32-Bit'),
+  (1025,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000',1015,'CentOS 6 64-Bit');
+UNLOCK TABLES;
 
 --
 -- Table structure for table `OSB_TestrayIssue`
