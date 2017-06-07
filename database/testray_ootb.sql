@@ -24,7 +24,7 @@ CREATE TABLE `Account_` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Account_`
+-- Data for table `Account_`
 --
 
 LOCK TABLES `Account_` WRITE;
@@ -80,7 +80,7 @@ CREATE TABLE `AnnouncementsDelivery` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `AnnouncementsDelivery`
+-- Data for table `AnnouncementsDelivery`
 --
 
 LOCK TABLES `AnnouncementsDelivery` WRITE;
@@ -257,7 +257,7 @@ CREATE TABLE `AssetEntry` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `AssetEntry`
+-- Data for table `AssetEntry`
 --
 
 LOCK TABLES `AssetEntry` WRITE;
@@ -347,7 +347,7 @@ CREATE TABLE `AssetVocabulary` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `AssetVocabulary`
+-- Data for table `AssetVocabulary`
 --
 
 LOCK TABLES `AssetVocabulary` WRITE;
@@ -708,7 +708,7 @@ CREATE TABLE `ClassName_` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ClassName_`
+-- Data for table `ClassName_`
 --
 
 LOCK TABLES `ClassName_` WRITE;
@@ -752,7 +752,7 @@ CREATE TABLE `Company` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Company`
+-- Data for table `Company`
 --
 
 LOCK TABLES `Company` WRITE;
@@ -810,7 +810,7 @@ CREATE TABLE `Contact_` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Contact_`
+-- Data for table `Contact_`
 --
 
 LOCK TABLES `Contact_` WRITE;
@@ -847,7 +847,7 @@ CREATE TABLE `Counter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Counter`
+-- Data for table `Counter`
 --
 
 LOCK TABLES `Counter` WRITE;
@@ -876,7 +876,7 @@ CREATE TABLE `Country` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Country`
+-- Data for table `Country`
 --
 
 LOCK TABLES `Country` WRITE;
@@ -1113,7 +1113,7 @@ CREATE TABLE `DDMStructureLink` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `DDMStructureLink`
+-- Data for table `DDMStructureLink`
 --
 
 LOCK TABLES `DDMStructureLink` WRITE;
@@ -1348,7 +1348,7 @@ CREATE TABLE `DLFileEntryType` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `DLFileEntryType`
+-- Data for table `DLFileEntryType`
 --
 
 LOCK TABLES `DLFileEntryType` WRITE;
@@ -1560,7 +1560,7 @@ CREATE TABLE `ExpandoColumn` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ExpandoColumn`
+-- Data for table `ExpandoColumn`
 --
 
 LOCK TABLES `ExpandoColumn` WRITE;
@@ -1596,7 +1596,7 @@ CREATE TABLE `ExpandoTable` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ExpandoTable`
+-- Data for table `ExpandoTable`
 --
 
 LOCK TABLES `ExpandoTable` WRITE;
@@ -1698,7 +1698,7 @@ CREATE TABLE `Group_` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Group_`
+-- Data for table `Group_`
 --
 
 LOCK TABLES `Group_` WRITE;
@@ -1788,7 +1788,7 @@ CREATE TABLE `Image` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Image`
+-- Data for table `Image`
 --
 
 LOCK TABLES `Image` WRITE;
@@ -2013,7 +2013,7 @@ CREATE TABLE `KaleoAction` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `KaleoAction`
+-- Data for table `KaleoAction`
 --
 
 LOCK TABLES `KaleoAction` WRITE;
@@ -2553,7 +2553,7 @@ CREATE TABLE `Layout` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Layout`
+-- Data for table `Layout`
 --
 
 LOCK TABLES `Layout` WRITE;
@@ -2610,7 +2610,7 @@ CREATE TABLE `LayoutFriendlyURL` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `LayoutFriendlyURL`
+-- Data for table `LayoutFriendlyURL`
 --
 
 LOCK TABLES `LayoutFriendlyURL` WRITE;
@@ -2640,7 +2640,7 @@ CREATE TABLE `LayoutPrototype` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `LayoutPrototype`
+-- Data for table `LayoutPrototype`
 --
 
 LOCK TABLES `LayoutPrototype` WRITE;
@@ -2719,7 +2719,7 @@ CREATE TABLE `LayoutSet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `LayoutSet`
+-- Data for table `LayoutSet`
 --
 
 LOCK TABLES `LayoutSet` WRITE;
@@ -2778,7 +2778,7 @@ CREATE TABLE `LayoutSetPrototype` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `LayoutSetPrototype`
+-- Data for table `LayoutSetPrototype`
 --
 
 LOCK TABLES `LayoutSetPrototype` WRITE;
@@ -2800,7 +2800,7 @@ CREATE TABLE `ListType` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ListType`
+-- Data for table `ListType`
 --
 
 LOCK TABLES `ListType` WRITE;
@@ -3200,7 +3200,7 @@ CREATE TABLE `Marketplace_App` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Marketplace_App`
+-- Data for table `Marketplace_App`
 --
 
 LOCK TABLES `Marketplace_App` WRITE;
@@ -3227,7 +3227,7 @@ CREATE TABLE `Marketplace_Module` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Marketplace_Module`
+-- Data for table `Marketplace_Module`
 --
 
 LOCK TABLES `Marketplace_Module` WRITE;
@@ -3940,7 +3940,7 @@ CREATE TABLE `PasswordPolicy` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `PasswordPolicy`
+-- Data for table `PasswordPolicy`
 --
 
 LOCK TABLES `PasswordPolicy` WRITE;
@@ -4105,7 +4105,7 @@ CREATE TABLE `PortalPreferences` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `PortalPreferences`
+-- Data for table `PortalPreferences`
 --
 
 LOCK TABLES `PortalPreferences` WRITE;
@@ -4128,7 +4128,7 @@ CREATE TABLE `Portlet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Portlet`
+-- Data for table `Portlet`
 --
 
 LOCK TABLES `Portlet` WRITE;
@@ -4180,7 +4180,7 @@ CREATE TABLE `PortletPreferences` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `PortletPreferences`
+-- Data for table `PortletPreferences`
 --
 
 LOCK TABLES `PortletPreferences` WRITE;
@@ -4484,7 +4484,7 @@ CREATE TABLE `Region` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Region`
+-- Data for table `Region`
 --
 
 LOCK TABLES `Region` WRITE;
@@ -4512,7 +4512,7 @@ CREATE TABLE `Release_` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Release_`
+-- Data for table `Release_`
 --
 
 LOCK TABLES `Release_` WRITE;
@@ -4585,7 +4585,7 @@ CREATE TABLE `ResourceAction` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ResourceAction`
+-- Data for table `ResourceAction`
 --
 
 LOCK TABLES `ResourceAction` WRITE;
@@ -4610,7 +4610,7 @@ CREATE TABLE `ResourceBlock` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ResourceBlock`
+-- Data for table `ResourceBlock`
 --
 
 LOCK TABLES `ResourceBlock` WRITE;
@@ -4634,7 +4634,7 @@ CREATE TABLE `ResourceBlockPermission` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ResourceBlockPermission`
+-- Data for table `ResourceBlockPermission`
 --
 
 LOCK TABLES `ResourceBlockPermission` WRITE;
@@ -4668,7 +4668,7 @@ CREATE TABLE `ResourcePermission` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ResourcePermission`
+-- Data for table `ResourcePermission`
 --
 
 LOCK TABLES `ResourcePermission` WRITE;
@@ -4724,7 +4724,7 @@ CREATE TABLE `Role_` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Role_`
+-- Data for table `Role_`
 --
 
 LOCK TABLES `Role_` WRITE;
@@ -4755,7 +4755,7 @@ CREATE TABLE `SAPEntry` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `SAPEntry`
+-- Data for table `SAPEntry`
 --
 
 LOCK TABLES `SAPEntry` WRITE;
@@ -4778,7 +4778,7 @@ CREATE TABLE `ServiceComponent` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ServiceComponent`
+-- Data for table `ServiceComponent`
 --
 
 LOCK TABLES `ServiceComponent` WRITE;
@@ -5102,7 +5102,7 @@ CREATE TABLE `SystemEvent` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `SystemEvent`
+-- Data for table `SystemEvent`
 --
 
 LOCK TABLES `SystemEvent` WRITE;
@@ -5426,7 +5426,7 @@ CREATE TABLE `User_` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `User_`
+-- Data for table `User_`
 --
 
 LOCK TABLES `User_` WRITE;
@@ -5448,7 +5448,7 @@ CREATE TABLE `Users_Groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Users_Groups`
+-- Data for table `Users_Groups`
 --
 
 LOCK TABLES `Users_Groups` WRITE;
@@ -5484,7 +5484,7 @@ CREATE TABLE `Users_Roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Users_Roles`
+-- Data for table `Users_Roles`
 --
 
 LOCK TABLES `Users_Roles` WRITE;
@@ -5535,7 +5535,7 @@ CREATE TABLE `VirtualHost` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `VirtualHost`
+-- Data for table `VirtualHost`
 --
 
 LOCK TABLES `VirtualHost` WRITE;
