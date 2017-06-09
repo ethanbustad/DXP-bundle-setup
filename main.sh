@@ -116,11 +116,13 @@ then
 	git clean -dfx
 fi
 
+git fetch -f --no-tags ${remote_base} ${remote_base_branch}:base
+
 git fetch -f --no-tags $pr_repo $pr_branch
 
 git checkout -f FETCH_HEAD
 
-git rebase ${remote_base}/${remote_base_branch}
+git rebase base
 
 if [ -e $PORTAL_REPO_DIR/.git/rebase-apply ]
 then
@@ -128,6 +130,8 @@ then
 
 	rebase_successful=false
 fi
+
+git branch -D base
 
 ant "-Dapp.server.parent.dir=$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME" -f $PORTAL_REPO_DIR/build.xml setup-sdk
 
