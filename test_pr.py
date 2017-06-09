@@ -130,7 +130,7 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 			github_un, github_pw = get_credentials('github', True)
 			return test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw)
 		else:
-			print('Error github: {} {}'.format(e.code, e.reason))
+			print('Error: {} {}'.format(e.code, e.reason))
 			sys.exit()
 
 	data = {
