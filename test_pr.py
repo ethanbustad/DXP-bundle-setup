@@ -39,6 +39,13 @@ def compat_dict_iter(dictionary):
 		return dictionary.items()
 
 
+def compat_input(message):
+	if is_python_2():
+		return raw_input(message)
+	else:
+		return input(message)
+
+
 def compat_print(message):
 	if is_python_2():
 		print message
@@ -76,16 +83,7 @@ def execute_request(url, un, pw, data=None, headers=None):
 		request, json.dumps(data)).read()
 
 
-def get_master_key():
-	global master_key
-
-	if master_key is None:
-		master_key = getpass('Master Key (if you haven\'t created one yet, pick one now):')
-
-	return master_key
-
-
-def get_password(name, override=False):
+def get_credentials(name, override=False):
 	master_key = get_master_key()
 
 	base_dirpath = os.path.dirname(os.path.abspath(__file__))
@@ -101,18 +99,31 @@ def get_password(name, override=False):
 		with open(credential_filepath, 'r') as f:
 			elements = f.readlines()
 
-		password = decrypt(elements[0], master_key, base64.b64decode(elements[1]))
+		username = elements[0]
+		password = decrypt(elements[1], master_key, base64.b64decode(elements[2]))
 	else:
-		password = getpass('Please enter password for {}:'.format(name))
+		username = compat_input('Please enter your username for {}: '.format(name))
+		password = getpass('Please enter password for {}: '.format(name))
 		iv = os.urandom(BLOCK_SIZE)
 
 		with open(credential_filepath, 'w') as f:
+			f.write(username)
+			f.write('\n')
 			f.write(encrypt(password, master_key, iv))
 			f.write('\n')
 			f.write(base64.b64encode(iv))
 			f.write('\n')
 
-	return password
+	return (username, password)
+
+
+def get_master_key():
+	global master_key
+
+	if master_key is None:
+		master_key = getpass('Master Key (if you haven\'t created one yet, pick one now):')
+
+	return master_key
 
 
 def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
@@ -122,7 +133,9 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 		pr_info = json.loads(execute_request(api_url, github_un, github_pw))
 	except IOError as e:
 		if e.code == 401:
-			return test_pr(pr_url, github_un, get_password('github', True), jenkins_un, jenkins_pw)
+			compat_print('Github authentication failed.')
+			github_un, github_pw = get_credentials('github', True)
+			return test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw)
 		else:
 			compat_print('Error github: {} {}'.format(e.code, e.reason))
 			sys.exit()
@@ -152,7 +165,9 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 		crumb = execute_request(JENKINS_CRUMB_URL, jenkins_un, jenkins_pw)
 	except IOError as e:
 		if e.code == 401:
-			return test_pr(pr_url, github_un, github_pw, jenkins_un, get_password('jenkins', True))
+			compat_print('Jenkins authentication failed.')
+			jenkins_un, jenkins_pw = get_credentials('jenkins', True)
+			return test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw)
 		else:
 			compat_print('Error: {} {}'.format(e.code, e.reason))
 			sys.exit()
@@ -165,22 +180,22 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 		return execute_request(JENKINS_API_URL, jenkins_un, jenkins_pw, data, headers)
 	except IOError as e:
 		if e.code == 401:
-			return test_pr(pr_url, github_un, github_pw, jenkins_un, get_password('jenkins', True))
+			compat_print('Jenkins authentication failed.')
+			jenkins_un, jenkins_pw = get_credentials('jenkins', True)
+			return test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw)
 		else:
 			compat_print('Error: {} {}'.format(e.code, e.reason))
 			sys.exit()
 
 
 if __name__ == "__main__":
-	if len(sys.argv) != 4:
-		compat_print('Error. Requires exactly 3 arguments: PR URL, GitHub username, Jenkins username')
+	if len(sys.argv) != 2:
+		compat_print('Error. Requires exactly 1 argument: PR URL')
 		sys.exit()
 
 	pr_url = sys.argv[1]
-	github_un = sys.argv[2]
-	jenkins_un = sys.argv[3]
 
-	github_pw = None if ':' in github_un else get_password('github')
-	jenkins_pw = None if ':' in jenkins_un else get_password('jenkins')
+	github_un, github_pw = get_credentials('github')
+	jenkins_un, jenkins_pw = get_credentials('jenkins')
 
 	compat_print(test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw))
