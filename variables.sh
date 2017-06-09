@@ -20,7 +20,7 @@ SSH_KEY_FILE=~/.ssh/id_rsa_ethan.bustad_liferay.com
 SUBREPO_LOCATION=$PORTAL_REPO_DIR/modules/private/apps/osb-testray
 SUBREPO_NAME=com-liferay-osb-testray-private
 SUBREPO_REMOTE_BASE=git@github.com:liferay/$SUBREPO_NAME
-SUBREPO_REMOTE_BASE_BRANCH=7.0.x-private
+SUBREPO_REMOTE_BASE_BRANCH=${BASE_BRANCH:-7.0.x-private}
 
 if [ -e variables-ext.sh ]
 then

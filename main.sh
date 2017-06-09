@@ -8,8 +8,8 @@ echo Starting at `date "+%F %T.%N"`
 
 source variables.sh
 
-pr_repo=$1
-pr_branch=$2
+pr_repo=$HEAD_FETCH_URL
+pr_branch=$HEAD_BRANCH
 
 eval `ssh-agent -s`
 ssh-add ${SSH_KEY_FILE}
