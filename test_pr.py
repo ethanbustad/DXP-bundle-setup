@@ -90,7 +90,7 @@ def get_credentials(name, override=False):
 
 	if os.path.isfile(credential_filepath) and not override:
 		with open(credential_filepath, 'r') as f:
-			elements = f.readlines()
+			elements = f.read().splitlines()
 
 		username = elements[0]
 		password = decrypt(elements[1], master_key, base64.b64decode(elements[2]))
