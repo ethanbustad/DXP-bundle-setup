@@ -46,13 +46,6 @@ def compat_input(message):
 		return input(message)
 
 
-def compat_print(message):
-	if is_python_2():
-		print message
-	else:
-		print(message)
-
-
 def decrypt(ciphertext, password, iv):
 	key = hashlib.pbkdf2_hmac('sha256', password, iv, 100000)
 	aes = AES.new(key, AES.MODE_CFB, iv)
@@ -133,11 +126,11 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 		pr_info = json.loads(execute_request(api_url, github_un, github_pw))
 	except IOError as e:
 		if e.code == 401:
-			compat_print('Github authentication failed.')
+			print('Github authentication failed.')
 			github_un, github_pw = get_credentials('github', True)
 			return test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw)
 		else:
-			compat_print('Error github: {} {}'.format(e.code, e.reason))
+			print('Error github: {} {}'.format(e.code, e.reason))
 			sys.exit()
 
 	data = {
@@ -165,11 +158,11 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 		crumb = execute_request(JENKINS_CRUMB_URL, jenkins_un, jenkins_pw)
 	except IOError as e:
 		if e.code == 401:
-			compat_print('Jenkins authentication failed.')
+			print('Jenkins authentication failed.')
 			jenkins_un, jenkins_pw = get_credentials('jenkins', True)
 			return test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw)
 		else:
-			compat_print('Error: {} {}'.format(e.code, e.reason))
+			print('Error: {} {}'.format(e.code, e.reason))
 			sys.exit()
 
 	headers = {
@@ -180,17 +173,17 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 		return execute_request(JENKINS_API_URL, jenkins_un, jenkins_pw, data, headers)
 	except IOError as e:
 		if e.code == 401:
-			compat_print('Jenkins authentication failed.')
+			print('Jenkins authentication failed.')
 			jenkins_un, jenkins_pw = get_credentials('jenkins', True)
 			return test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw)
 		else:
-			compat_print('Error: {} {}'.format(e.code, e.reason))
+			print('Error: {} {}'.format(e.code, e.reason))
 			sys.exit()
 
 
 if __name__ == "__main__":
 	if len(sys.argv) != 2:
-		compat_print('Error. Requires exactly 1 argument: PR URL')
+		print('Error. Requires exactly 1 argument: PR URL')
 		sys.exit()
 
 	pr_url = sys.argv[1]
@@ -198,4 +191,4 @@ if __name__ == "__main__":
 	github_un, github_pw = get_credentials('github')
 	jenkins_un, jenkins_pw = get_credentials('jenkins')
 
-	compat_print(test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw))
+	print(test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw))
