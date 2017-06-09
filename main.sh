@@ -11,6 +11,8 @@ source variables.sh
 pr_repo=$HEAD_FETCH_URL
 pr_branch=$HEAD_BRANCH
 
+echo "Testing branch $pr_branch on repo $pr_repo."
+
 eval `ssh-agent -s`
 ssh-add ${SSH_KEY_FILE}
 
