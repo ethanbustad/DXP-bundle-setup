@@ -23,7 +23,7 @@ CREDENTIAL_DIRNAME = '.credentials'
 
 JENKINS_CRUMB_API = 'crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
 JENKINS_DOMAIN = 'http://testray-ci.liferay.com'
-JENKINS_JOB = 'job/misc/job/testray-pr-instance'
+JENKINS_JOB = 'job/testray-pr-tester'
 JENKINS_URL_SUFFIX = 'build'
 
 JENKINS_API_URL = JENKINS_DOMAIN + '/' + JENKINS_JOB + '/' + JENKINS_URL_SUFFIX
@@ -73,7 +73,7 @@ def execute_request(url, un, pw, data=None, headers=None):
 			request.add_header(header, value)
 
 	return compat_urllib.urlopen(request).read() if data is None else compat_urllib.urlopen(
-		request, json.dumps(data)).read()
+		request, data).read()
 
 
 def get_credentials(name, override=False):
@@ -166,11 +166,12 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 			sys.exit()
 
 	headers = {
+		'Content-Type': 'application/x-www-form-urlencoded',
 		crumb.split(':')[0]: crumb.split(':')[1]
 	}
 
 	try:
-		return execute_request(JENKINS_API_URL, jenkins_un, jenkins_pw, data, headers)
+		return execute_request(JENKINS_API_URL, jenkins_un, jenkins_pw, 'json=' + json.dumps(data), headers)
 	except IOError as e:
 		if e.code == 401:
 			print('Jenkins authentication failed.')
