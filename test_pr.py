@@ -77,8 +77,6 @@ def execute_request(url, un, pw, data=None, headers=None):
 
 
 def get_credentials(name, override=False):
-	master_key = get_master_key()
-
 	base_dirpath = os.path.dirname(os.path.abspath(__file__))
 
 	parent_dirpath = os.path.join(base_dirpath, CREDENTIAL_DIRNAME)
@@ -93,7 +91,7 @@ def get_credentials(name, override=False):
 			elements = f.read().splitlines()
 
 		username = elements[0]
-		password = decrypt(elements[1], master_key, base64.b64decode(elements[2]))
+		password = decrypt(elements[1], get_master_key(), base64.b64decode(elements[2]))
 	else:
 		username = compat_input('Please enter your username for {}: '.format(name))
 		password = getpass('Please enter password for {}: '.format(name))
@@ -102,7 +100,7 @@ def get_credentials(name, override=False):
 		with open(credential_filepath, 'w') as f:
 			f.write(username)
 			f.write('\n')
-			f.write(encrypt(password, master_key, iv))
+			f.write(encrypt(password, get_master_key(), iv))
 			f.write('\n')
 			f.write(base64.b64encode(iv))
 			f.write('\n')
