@@ -152,6 +152,21 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 		]
 	}
 
+	tickets = set()
+
+	ticket_pattern = re.compile('[A-Z]+-[0-9]+')
+
+	for text in (pr_info['title'], pr_info['body'], pr_info['head']['ref']):
+		tickets.update(ticket_pattern.findall(text))
+
+	if tickets:
+		data['parameter'].append(
+			{
+				'name': 'JIRA_KEYS',
+				'value': ','.join(tickets)
+			}
+		)
+
 	try:
 		crumb = execute_request(JENKINS_CRUMB_URL, jenkins_un, jenkins_pw)
 	except IOError as e:
