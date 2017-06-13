@@ -3535,10 +3535,10 @@ INSERT INTO `OSB_TestrayCaseType` VALUES
   (1001,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Automated Functional Test','Automated Functional Test'),
   (1002,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Compile','Compile'),
   (1003,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Integration Test','Integration Test'),
-  (1004,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Manual Use Case','Manual Use Case');
+  (1004,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Manual Use Case','Manual Use Case'),
   (1005,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Modules Integration Test','Modules Integration Test'),
   (1006,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Modules Unit Test','Modules Unit Test'),
-  (1007,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Unit Test','Unit Test'),
+  (1007,20143,20116,20156,'Test Test','2017-06-03 00:42:24.329000','2017-06-03 00:42:24.329000','Unit Test','Unit Test');
 UNLOCK TABLES;
 
 --
