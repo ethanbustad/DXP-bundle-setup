@@ -184,7 +184,8 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 	}
 
 	try:
-		return execute_request(JENKINS_API_URL, jenkins_un, jenkins_pw, 'json=' + json.dumps(data), headers)
+		return execute_request(
+			JENKINS_API_URL, jenkins_un, jenkins_pw, 'json=' + json.dumps(data), headers)
 	except IOError as e:
 		if e.code == 401:
 			print('Jenkins authentication failed.')
