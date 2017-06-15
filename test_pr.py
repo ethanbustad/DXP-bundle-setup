@@ -64,17 +64,11 @@ master_key = None
 ##
 
 def compat_dict_iter(dictionary):
-	if is_python_2():
-		return dictionary.viewitems()
-	else:
-		return dictionary.items()
+	return dictionary.viewitems() if is_python_2() else dictionary.items()
 
 
 def compat_input(message):
-	if is_python_2():
-		return raw_input(message)
-	else:
-		return input(message)
+	return raw_input(message) if is_python_2() else input(message)
 
 
 def decrypt(ciphertext, password, iv):
