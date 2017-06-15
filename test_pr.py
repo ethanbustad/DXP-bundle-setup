@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import base64
-from Crypto.Cipher import AES
 from getpass import getpass
 import hashlib
 import json
@@ -9,8 +8,21 @@ import os
 import re
 import sys
 
+def crypto_fail():
+	print('Error.\nIt seems your python installation does not include a necessary ' +
+		'cryptographic library. Run "pip install pycryptodomex" to fix this.')
+	sys.exit(1)
+
 def is_python_2():
 	return sys.version_info[0] == 2
+
+try:
+	from Cryptodome.Cipher import AES
+except ImportError as ie:
+	try:
+		from Crypto.Cipher import AES
+	except ImportError as ie2:
+		crypto_fail()
 
 if is_python_2():
 	import urllib2 as compat_urllib
@@ -48,13 +60,19 @@ def compat_input(message):
 
 def decrypt(ciphertext, password, iv):
 	key = hashlib.pbkdf2_hmac('sha256', password, iv, 100000)
-	aes = AES.new(key, AES.MODE_CFB, iv)
+	try:
+		aes = AES.new(key, AES.MODE_GCM, iv)
+	except AttributeError as ae:
+		crypto_fail()
 	return aes.decrypt(base64.b64decode(ciphertext))
 
 
 def encrypt(plaintext, password, iv):
 	key = hashlib.pbkdf2_hmac('sha256', password, iv, 100000)
-	aes = AES.new(key, AES.MODE_CFB, iv)
+	try:
+		aes = AES.new(key, AES.MODE_GCM, iv)
+	except AttributeError as ae:
+		crypto_fail()
 	return base64.b64encode(aes.encrypt(plaintext))
 
 
