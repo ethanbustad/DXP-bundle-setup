@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+##
+## Imports
+##
+
 import base64
 from getpass import getpass
 import hashlib
@@ -7,6 +11,10 @@ import json
 import os
 import re
 import sys
+
+##
+## Conditional Imports
+##
 
 def crypto_fail():
 	print('Error.\nIt seems your python installation does not include a necessary ' +
@@ -29,6 +37,10 @@ if is_python_2():
 else:
 	import urllib.request as compat_urllib
 
+##
+## Constants
+##
+
 BLOCK_SIZE = 16
 
 CREDENTIAL_DIRNAME = '.credentials'
@@ -41,8 +53,15 @@ JENKINS_URL_SUFFIX = 'build'
 JENKINS_API_URL = JENKINS_DOMAIN + '/' + JENKINS_JOB + '/' + JENKINS_URL_SUFFIX
 JENKINS_CRUMB_URL = JENKINS_DOMAIN + '/' + JENKINS_CRUMB_API
 
+##
+## Global Variables
+##
+
 master_key = None
 
+##
+## Functions
+##
 
 def compat_dict_iter(dictionary):
 	if is_python_2():
@@ -213,6 +232,9 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 			print('Error: {} {}'.format(e.code, e.reason))
 			sys.exit()
 
+##
+## Main
+##
 
 if __name__ == "__main__":
 	if len(sys.argv) != 2:
