@@ -237,6 +237,10 @@ if __name__ == "__main__":
 
 	pr_url = sys.argv[1]
 
+	if not 'github.com' in pr_url:
+		print('Error. Please enter the PR URL. This is not a valid PR URL.')
+		sys.exit()
+
 	github_un, github_pw = get_credentials('github')
 	jenkins_un, jenkins_pw = get_credentials('jenkins')
 
