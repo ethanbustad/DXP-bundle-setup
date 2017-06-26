@@ -8,7 +8,7 @@ echo Starting at `date "+%F %T.%N"`
 
 source variables.sh
 
-pr_repo=$HEAD_FETCH_URL
+pr_repo=${HEAD_FETCH_URL/https:\/\/github.com\//git@github.com}
 pr_branch=$HEAD_BRANCH
 
 echo "Testing branch $pr_branch on repo $pr_repo."
