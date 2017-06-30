@@ -27,7 +27,8 @@ if __name__ == "__main__":
 		# get the main method of the indicated script
 		try:
 			func = getattr(__import__(sys.argv[1]), 'main')
-		except:
+		except (AttributeError, ImportError) as e:
+			print('{} is not a valid command.'.format(sys.argv[1]))
 			print(__doc__)
 			sys.exit(1)
 
