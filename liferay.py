@@ -24,10 +24,18 @@ import test_pr
 
 if __name__ == "__main__":
 	if len(sys.argv) > 1:
-		func = getattr(__import__(sys.argv[1]), 'main')
+		# get the main method of the indicated script
+		try:
+			func = getattr(__import__(sys.argv[1]), 'main')
+		except:
+			print(__doc__)
+			sys.exit(1)
+
+		# execute the main method with the indicated list of arguments
 		if len(sys.argv) > 2:
 			func(sys.argv[2:])
 		else:
 			func()
 	else:
 		print(__doc__)
+		sys.exit(1)
