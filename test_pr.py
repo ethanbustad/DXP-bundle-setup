@@ -148,6 +148,23 @@ def get_master_key():
 	return master_key
 
 
+def main(args):
+	if len(args) != 1:
+		print('Error. Requires exactly 1 argument: PR URL')
+		sys.exit()
+
+	pr_url = args[0]
+
+	if not 'github.com' in pr_url:
+		print('Error. Please enter the PR URL. This is not a valid PR URL.')
+		sys.exit()
+
+	github_un, github_pw = get_credentials('github')
+	jenkins_un, jenkins_pw = get_credentials('jenkins')
+
+	print(test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw))
+
+
 def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 	api_url = re.sub('github.com/(.*)/pull/(\d+)$', r'api.github.com/repos/\1/pulls/\2', pr_url)
 
@@ -231,17 +248,4 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 ##
 
 if __name__ == "__main__":
-	if len(sys.argv) != 2:
-		print('Error. Requires exactly 1 argument: PR URL')
-		sys.exit()
-
-	pr_url = sys.argv[1]
-
-	if not 'github.com' in pr_url:
-		print('Error. Please enter the PR URL. This is not a valid PR URL.')
-		sys.exit()
-
-	github_un, github_pw = get_credentials('github')
-	jenkins_un, jenkins_pw = get_credentials('jenkins')
-
-	print(test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw))
+	main(sys.argv[1:])
