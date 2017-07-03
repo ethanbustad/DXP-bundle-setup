@@ -32,6 +32,26 @@ With an alias (recommended) like: `liferay="python /path/to/liferay.py"`
 * `liferay switch`
 * `liferay test_pr`
 
+## `switch.py`
+
+Switches Liferay to compile from and deploy to a particular app-server bundle.
+
+### First invokation
+
+The first time the script is run, it will prompt for the following information:
+
+* Parent bundle directory. This directory will be searched recursively for valid Liferay bundles.
+* The desired bundle to use out of a list of valid bundles derived by searching the parent bundle directory.
+* Liferay source directory. This should be the parent directory of a local `liferay-portal`-type repository instance. The bundle switch will be accomplished via `app.server.$x.properties` in this repo.
+
+### Subsequent Invocations
+
+Future invocations of the script will only prompt for the desired bundle to switch to.
+
+### Limitations
+
+Currently this script only supports deploying from inside a `liferay-portal`-type repository, not `liferay-plugins`-type repositories or submodules. This functionality may be added in the future.
+
 ## `test_pr.py`
 
 Kicks off automated PR tests on a remote Jenkins server. Usage is currently hard-coded to [testray-ci.liferay.com](testray-ci.liferay.com).
