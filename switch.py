@@ -68,10 +68,14 @@ def main(args):
 
 	choice_bundle = _bundles.get_user_choice_element(bundles, 'Switch to which bundle?')
 
+	switch_to(choice_bundle)
+
+
+def switch_to(bundle):
 	properties_filename = get_properties_filename()
 
 	with open(properties_filename, 'w') as f:
-		f.write(PATH_PROPERTY.format(choice_bundle))
+		f.write(PATH_PROPERTY.format(bundle))
 
 ##
 ## Main
