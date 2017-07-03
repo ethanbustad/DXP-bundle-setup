@@ -52,6 +52,8 @@ Future invocations of the script will only prompt for the desired bundle to swit
 
 Currently this script only supports deploying from inside a `liferay-portal`-type repository, not `liferay-plugins`-type repositories or submodules. This functionality may be added in the future.
 
+Execution of this script will most likely be slow if the indicated parent bundle directory contains much non-bundle content.
+
 ## `test_pr.py`
 
 Kicks off automated PR tests on a remote Jenkins server. Usage is currently hard-coded to [testray-ci.liferay.com](testray-ci.liferay.com).
