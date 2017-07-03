@@ -247,5 +247,5 @@ def test_pr(pr_url, github_un, github_pw, jenkins_un, jenkins_pw):
 ## Main
 ##
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 	main(sys.argv[1:])
