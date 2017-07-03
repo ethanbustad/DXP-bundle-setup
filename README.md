@@ -19,18 +19,18 @@ This is a simple script to invoke other python scripts in the same directory, as
 Simple:
 
 * `python liferay.py switch`
-* `python liferay.py test_pr`
+* `python liferay.py test_pr [pr_url]`
 * etc.
 
 Unix-style:
 
 * `./liferay.py switch`
-* `./liferay.py test_pr`
+* `./liferay.py test_pr [pr_url]`
 
 With an alias (recommended) like: `liferay="python /path/to/liferay.py"`
 
 * `liferay switch`
-* `liferay test_pr`
+* `liferay test_pr [pr_url]`
 
 ## `switch.py`
 
