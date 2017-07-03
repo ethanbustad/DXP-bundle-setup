@@ -16,6 +16,7 @@ Example usage: python liferay.py test_pr [pr_url]
 
 import sys
 
+import switch
 import test_pr
 
 ##
