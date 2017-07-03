@@ -10,6 +10,28 @@
 
 Details should be filled in here at some point.
 
+## `liferay.py`
+
+This is a simple script to invoke other python scripts in the same directory, as a convenience -- this way only a single alias needs to be set up to invoke any of this logic.
+
+### Usage
+
+Simple:
+
+* `python liferay.py switch`
+* `python liferay.py test_pr`
+* etc.
+
+Unix-style:
+
+* `./liferay.py switch`
+* `./liferay.py test_pr`
+
+With an alias (recommended) like: `liferay="python /path/to/liferay.py"`
+
+* `liferay switch`
+* `liferay test_pr`
+
 ## `test_pr.py`
 
 ### First Invocation
