@@ -1,8 +1,10 @@
 .cache/*
 .credentials/*
+.settings/*
+
 logs/
+
 *.pyc
 
-variables-ext.sh
-
 license/license-portal-digitalenterprise-7.0ga1.xml
+variables-ext.sh
