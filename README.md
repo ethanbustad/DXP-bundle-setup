@@ -18,19 +18,34 @@ This is a simple script to invoke other python scripts in the same directory, as
 
 Simple:
 
+* `python liferay.py setup`
 * `python liferay.py switch`
 * `python liferay.py test_pr [pr_url]`
 * etc.
 
 Unix-style:
 
+* `./liferay.py setup`
 * `./liferay.py switch`
 * `./liferay.py test_pr [pr_url]`
 
 With an alias (recommended) like: `liferay="python /path/to/liferay.py"`
 
+* `liferay setup`
 * `liferay switch`
 * `liferay test_pr [pr_url]`
+
+## `setup.py`
+
+Sets up a new bundle, prompting for arguments and invoking `set_up_bundle.py`
+
+### Invocation
+
+The script prompts the user for a location to build the bundle, allowing for overwriting an existing bundle or creating a bundle in a new location.
+
+### Limitations
+
+Currently reliant on configurations made in `variables-ext.sh`. In the future, ideally this script would prompt for those configurations instead.
 
 ## `switch.py`
 
