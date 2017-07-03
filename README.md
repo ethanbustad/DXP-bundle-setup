@@ -34,6 +34,8 @@ With an alias (recommended) like: `liferay="python /path/to/liferay.py"`
 
 ## `test_pr.py`
 
+Kicks off automated PR tests on a remote Jenkins server. Usage is currently hard-coded to [testray-ci.liferay.com](testray-ci.liferay.com).
+
 ### First Invocation
 
 The first time the script is run, it will prompt for the following information:
