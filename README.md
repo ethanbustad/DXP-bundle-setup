@@ -51,7 +51,7 @@ Currently reliant on configurations made in `variables-ext.sh`. In the future, i
 
 Switches Liferay to compile from and deploy to a particular app-server bundle.
 
-### First invokation
+### First invocation
 
 The first time the script is run, it will prompt for the following information:
 
