@@ -1,4 +1,4 @@
-CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true  -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xms12288m -Xmx12288m -XX:MaxNewSize=6144m -XX:NewSize=6144m -XX:ReservedCodeCacheSize=128m"
+CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true  -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xms4096m -Xmx4096m -XX:MaxNewSize=2048m -XX:NewSize=2048m -XX:ReservedCodeCacheSize=128m"
 
 JAVA_OPTS="$JAVA_OPTS -XX:MaxTenuringThreshold=0 -XX:SurvivorRatio=65536 -XX:TargetSurvivorRatio=0"
 
