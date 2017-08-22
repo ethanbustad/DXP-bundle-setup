@@ -5,6 +5,8 @@ Master script for invoking any python script in this repository.
 This script exists as a convenience to set up just a single alias to execute many python scripts.
 
 Available commands are:
+setup
+switch
 test_pr
 
 Example usage: python liferay.py test_pr [pr_url]
