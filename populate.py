@@ -601,7 +601,7 @@ def create_data(instructions):
 	request = urllib2.Request(BULK_URL)
 
 	request.add_header('Authorization', 'Basic ' + b64encode(USERNAME + ':' + PASSWORD))
-	print ({'caseResultsJSONArrayString': json.dumps(case_results)})
+
 	try:
 		results = json.loads(
 			urllib2.urlopen(request, urllib.urlencode({'caseResultsJSONArrayString': json.dumps(case_results)})).read()
