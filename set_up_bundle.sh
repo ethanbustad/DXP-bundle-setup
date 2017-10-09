@@ -107,7 +107,6 @@ rm -fr $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/state
 
 echo "====================== Deploying plugins... ======================="
 
-cd $PORTAL_REPO_DIR/modules/private/apps/osb-testray/osb-testray-portlet && ant clean deploy && cd -
-cd $PORTAL_REPO_DIR/modules/private/apps/osb-testray/osb-testray-theme && $PORTAL_REPO_DIR/gradlew clean deploy && cd -
+cd $PORTAL_REPO_DIR/modules/private/apps/osb-testray && $PORTAL_REPO_DIR/gradlew clean deploy && cd -
 
 echo "============================== Done. =============================="
