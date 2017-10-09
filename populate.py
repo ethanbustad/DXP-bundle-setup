@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/python
 
 ##
 ## Imports
@@ -580,12 +580,12 @@ def create_data(instructions):
 		if model not in finished_models:
 			create_models(model, instructions, finished_models, {})
 
-	case_results = []
-
 	for project_id, routine_ids in OUTPUT['routines'].iteritems():
 		case_ids = OUTPUT['cases'][project_id]
 
 		for routine_id in routine_ids:
+			case_results = []
+
 			for build_id in OUTPUT['builds'][routine_id]:
 				for run_id in OUTPUT['runs'][build_id]:
 					for case_id in case_ids:
@@ -598,19 +598,19 @@ def create_data(instructions):
 							'warnings': get_warnings(nonce)
 						})
 
-	request = urllib2.Request(BULK_URL)
+			request = urllib2.Request(BULK_URL)
 
-	request.add_header('Authorization', 'Basic ' + b64encode(USERNAME + ':' + PASSWORD))
+			request.add_header('Authorization', 'Basic ' + b64encode(USERNAME + ':' + PASSWORD))
 
-	try:
-		results = json.loads(
-			urllib2.urlopen(request, urllib.urlencode({'caseResultsJSONArrayString': json.dumps(case_results)})).read()
-		)['data']
-	except urllib2.HTTPError as e:
-		print(e.read())
-		sys.exit(1)
+			try:
+				results = json.loads(
+					urllib2.urlopen(request, urllib.urlencode({'caseResultsJSONArrayString': json.dumps(case_results)})).read()
+				)['data']
+			except urllib2.HTTPError as e:
+				print(e.read())
+				sys.exit(1)
 
-	print('Created {} results.'.format(len(results)))
+			print('Created {} results.'.format(len(results)))
 
 
 def create_models(model, instructions, finished_models, reusable_params):
