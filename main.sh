@@ -168,6 +168,14 @@ for MODULE in ${DEPLOYABLE_PORTAL_MODULES[@]}; do
 	fi
 done
 
+for MODULE in ${DEPLOYABLE_URL_MODULES[@]}; do
+	filename=$(basename "$MODULE")
+
+	wget -q "$MODULE" -O "$filename"
+
+	mv "$filename" "$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/deploy/$filename"
+done
+
 echo "=============== Waiting for Liferay to start up... ================"
 
 until grep -qs "Server startup" $LOG_DIR/catalina.log

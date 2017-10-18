@@ -43,10 +43,13 @@ PORTAL_EXTRA_PROPERTIES=(
 # An array of modules to deploy from liferay-portal-ee.
 # Include the relative path starting from $repo/modules.
 DEPLOYABLE_PORTAL_MODULES=(
-	"private/apps/osb-testray/osb-testray-portlet"
-	"private/apps/osb-testray/osb-testray-theme"
-	"private/apps/osb-testray/osb-testray-dashboard/osb-testray-dashboard-gateway"
-	"private/apps/osb-testray/osb-testray-dashboard/osb-testray-dashboard-web"
+	"private/apps/osb-testray/osb-testray"
+)
+
+# An array of modules to download and deploy.
+# Include the URL to the module .jar file.
+DEPLOYABLE_URL_MODULES=(
+	"https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.alloy.mvc/2.0.0/com.liferay.alloy.mvc-2.0.0.jar"
 )
 
 fetch_dependency () {
