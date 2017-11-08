@@ -8,7 +8,7 @@ echo Starting at `date "+%F %T.%N"`
 
 source variables.sh
 
-pr_repo=${HEAD_FETCH_URL/https:\/\/github.com\//git@github.com}
+pr_repo=${HEAD_FETCH_URL/https:\/\/github.com\//git@github.com\/}
 pr_branch=$HEAD_BRANCH
 
 echo "Testing branch $pr_branch on repo $pr_repo."
@@ -171,7 +171,7 @@ done
 for MODULE in ${DEPLOYABLE_URL_MODULES[@]}; do
 	filename=$(basename "$MODULE")
 
-	wget -q "$MODULE" -O "$filename"
+	wget "$MODULE" -O "$filename"
 
 	mv "$filename" "$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/deploy/$filename"
 done
