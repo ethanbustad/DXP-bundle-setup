@@ -43,7 +43,7 @@ PORTAL_EXTRA_PROPERTIES=(
 # An array of modules to deploy from liferay-portal-ee.
 # Include the relative path starting from $repo/modules.
 DEPLOYABLE_PORTAL_MODULES=(
-	"private/apps/osb-testray/osb-testray"
+	"private/apps/osb-testray"
 )
 
 # An array of modules to download and deploy.
