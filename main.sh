@@ -146,6 +146,14 @@ done
 
 echo "====================== Deploying modules... ======================="
 
+for MODULE in ${DEPLOYABLE_URL_MODULES[@]}; do
+	filename=$(basename "$MODULE")
+
+	wget "$MODULE" -O "$filename"
+
+	mv -v "$filename" "$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/modules/${filename/-[0-9]\.[0-9]\.[0-9]\.jar/.jar}"
+done
+
 for MODULE in ${DEPLOYABLE_PORTAL_MODULES[@]}; do
 	cd $PORTAL_REPO_DIR/modules/$MODULE
 
@@ -155,14 +163,6 @@ for MODULE in ${DEPLOYABLE_PORTAL_MODULES[@]}; do
 	else
 		sudo $PORTAL_REPO_DIR/gradlew --no-daemon "-Dliferay.home=$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME" deploy
 	fi
-done
-
-for MODULE in ${DEPLOYABLE_URL_MODULES[@]}; do
-	filename=$(basename "$MODULE")
-
-	wget "$MODULE" -O "$filename"
-
-	mv -v "$filename" "$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/modules/${filename/-[0-9]\.[0-9]\.[0-9]\.jar/.jar}"
 done
 
 echo "=============== Waiting for Liferay to start up... ================"
