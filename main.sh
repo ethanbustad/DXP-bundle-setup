@@ -144,17 +144,6 @@ do
 	((i++)) && ((i==60)) && exit 1
 done
 
-echo "==================== Running backend tests... ====================="
-
-# ??
-# TODO
-# this is probably where we should handle the 'rebase_successful' variable
-
-echo "this is where we'd run backend tests"
-
-#
-#
-
 echo "====================== Deploying modules... ======================="
 
 for MODULE in ${DEPLOYABLE_PORTAL_MODULES[@]}; do
@@ -182,16 +171,6 @@ until grep -qs "Server startup" $LOG_DIR/catalina.log
 do
 	sleep 5s
 done
-
-echo "==================== Running runtime tests... ====================="
-
-# ??
-# TODO
-
-echo "this is where we'd run runtime tests"
-
-#
-#
 
 echo "============================= Done... ============================="
 
