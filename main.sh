@@ -173,7 +173,7 @@ for MODULE in ${DEPLOYABLE_URL_MODULES[@]}; do
 
 	wget "$MODULE" -O "$filename"
 
-	mv "$filename" "$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/modules/${filename/-[0-9]\.[0-9]\.[0-9]\.jar/.jar}"
+	mv -v "$filename" "$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/modules/${filename/-[0-9]\.[0-9]\.[0-9]\.jar/.jar}"
 done
 
 echo "=============== Waiting for Liferay to start up... ================"
