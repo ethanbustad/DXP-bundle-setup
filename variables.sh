@@ -50,6 +50,7 @@ DEPLOYABLE_PORTAL_MODULES=(
 # Include the URL to the module .jar file.
 DEPLOYABLE_URL_MODULES=(
 	"https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.alloy.mvc/2.0.0/com.liferay.alloy.mvc-2.0.0.jar"
+	"https://repository.liferay.com/nexus/service/local/repositories/liferay-public-releases/content/com/liferay/com.liferay.petra.string/1.0.1/com.liferay.petra.string-1.0.1.jar"
 )
 
 fetch_dependency () {
