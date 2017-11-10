@@ -107,6 +107,23 @@ rm -fr $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/state
 
 echo "====================== Deploying plugins... ======================="
 
-cd $PORTAL_REPO_DIR/modules/private/apps/osb-testray && $PORTAL_REPO_DIR/gradlew clean deploy && cd -
+for MODULE in ${DEPLOYABLE_URL_MODULES[@]}; do
+	filename=$(basename "$MODULE")
+
+	wget "$MODULE" -O "$filename"
+
+	mv -v "$filename" "$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/modules/${filename/-[0-9]\.[0-9]\.[0-9]\.jar/.jar}"
+done
+
+for MODULE in ${DEPLOYABLE_PORTAL_MODULES[@]}; do
+	cd $PORTAL_REPO_DIR/modules/$MODULE
+
+	if [ -e $PORTAL_REPO_DIR/modules/$MODULE/build.xml ]
+	then
+		ant "-Dapp.server.deploy.dir=$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/deploy" deploy
+	else
+		sudo $PORTAL_REPO_DIR/gradlew --no-daemon "-Dliferay.home=$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME" deploy
+	fi
+done
 
 echo "============================== Done. =============================="

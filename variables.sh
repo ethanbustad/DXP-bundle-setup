@@ -19,6 +19,20 @@ PORTAL_EXTRA_PROPERTIES=(
 	"jdbc.default.username="
 )
 
+# An array of modules to deploy from liferay-portal-ee.
+# Include the relative path starting from $repo/modules.
+DEPLOYABLE_PORTAL_MODULES=(
+	"private/apps/osb-testray"
+)
+
+# An array of modules to download and deploy.
+# Include the URL to the module .jar file.
+DEPLOYABLE_URL_MODULES=(
+	"https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.alloy.mvc/2.0.0/com.liferay.alloy.mvc-2.0.0.jar"
+	"https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.petra.lang/1.0.0/com.liferay.petra.lang-1.0.0.jar"
+	"https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.petra.string/1.0.0/com.liferay.petra.string-1.0.0.jar"
+)
+
 if [ -e variables-ext.sh ]
 then
 	source variables-ext.sh
