@@ -159,12 +159,7 @@ done
 for MODULE in ${DEPLOYABLE_PORTAL_MODULES[@]}; do
 	cd $PORTAL_REPO_DIR/modules/$MODULE
 
-	if [ -e $PORTAL_REPO_DIR/modules/$MODULE/build.xml ]
-	then
-		ant "-Dapp.server.deploy.dir=$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/deploy" deploy
-	else
-		sudo $PORTAL_REPO_DIR/gradlew --no-daemon "-Dliferay.home=$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME" deploy
-	fi
+	sudo $PORTAL_REPO_DIR/gradlew --no-daemon "-Dliferay.home=$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME" deploy
 done
 
 echo "=============== Waiting for Liferay to start up... ================"
