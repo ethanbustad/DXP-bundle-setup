@@ -49,6 +49,8 @@ cp -br tomcat/* $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/tomcat/
 
 echo "======================= Applying fixpack... ======================="
 
+rm -fr $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/patching-tool
+
 LATEST_PATCHING_TOOL=patching-tool-`curl --silent http://mirrors.lax.liferay.com/files.liferay.com/private/ee/fix-packs/patching-tool/LATEST-2.0.txt`.zip
 
 PATCHING_TOOL_ZIPFILE=`fetch_dependency "http://mirrors.lax.liferay.com/files.liferay.com/private/ee/fix-packs/patching-tool/${LATEST_PATCHING_TOOL}"`
