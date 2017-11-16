@@ -7,7 +7,7 @@
 BASE_DIR="$(pwd)"
 
 DESIRED_HOME_DIR_NAME=7.0.x
-FIX_PACK=de/liferay-fix-pack-de-16
+FIX_PACK=de/liferay-fix-pack-de-32
 INDEX_NAME=PR_tester_
 LIFERAY_HOME_PARENT_DIR=$BASE_DIR/bundles
 LOG_DIR=$BASE_DIR/logs
