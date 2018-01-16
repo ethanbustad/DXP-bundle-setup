@@ -107,6 +107,8 @@ rm -fr $LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/state
 
 echo "====================== Deploying plugins... ======================="
 
+mkdir -p "$LIFERAY_HOME_PARENT_DIR/$DESIRED_HOME_DIR_NAME/osgi/modules/"
+
 for MODULE in ${DEPLOYABLE_URL_MODULES[@]}; do
 	filename=$(basename "$MODULE")
 

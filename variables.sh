@@ -22,15 +22,23 @@ PORTAL_EXTRA_PROPERTIES=(
 # An array of modules to deploy from liferay-portal-ee.
 # Include the relative path starting from $repo/modules.
 DEPLOYABLE_PORTAL_MODULES=(
-	"private/apps/osb-testray"
+	"private/apps/osb-testray/osb-testray-api"
+	"private/apps/osb-testray/osb-testray-lang"
+	"private/apps/osb-testray/osb-testray-login-web-fragment"
+	"private/apps/osb-testray/osb-testray-service"
+	"private/apps/osb-testray/osb-testray-taglib"
+	"private/apps/osb-testray/osb-testray-theme"
+	"private/apps/osb-testray/osb-testray-unnamespace-bag"
+	"private/apps/osb-testray/osb-testray-web"
 )
 
 # An array of modules to download and deploy.
 # Include the URL to the module .jar file.
 DEPLOYABLE_URL_MODULES=(
-	"https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.alloy.mvc/2.0.0/com.liferay.alloy.mvc-2.0.0.jar"
+	"https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.alloy.mvc/2.3.0/com.liferay.alloy.mvc-2.3.0.jar"
 	"https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.petra.lang/1.0.0/com.liferay.petra.lang-1.0.0.jar"
 	"https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.petra.string/1.0.0/com.liferay.petra.string-1.0.0.jar"
+	"https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.portal.custom.jsp.bag.api/1.0.1/com.liferay.portal.custom.jsp.bag.api-1.0.1.jar"
 )
 
 if [ -e variables-ext.sh ]
