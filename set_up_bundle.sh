@@ -1,6 +1,15 @@
 #!/bin/bash
 
 # -----------------------------------------------------------------------------
+# Checks for necessary dependencies before starting the process.
+# -----------------------------------------------------------------------------
+
+command -v grep >/dev/null 2>&1 || { echo >&2 "grep is required but not installed - aborting"; exit 1; }
+command -v sed >/dev/null 2>&1 || { echo >&2 "sed is required but not installed - aborting"; exit 1; }
+command -v unzip >/dev/null 2>&1 || { echo >&2 "unzip is required but not installed - aborting"; exit 1; }
+command -v wget >/dev/null 2>&1 || { echo >&2 "wget is required but not installed - aborting"; exit 1; }
+
+# -----------------------------------------------------------------------------
 # Sets variables to use within script.
 # -----------------------------------------------------------------------------
 
