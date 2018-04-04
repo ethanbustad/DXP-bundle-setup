@@ -92,6 +92,8 @@ git fetch --no-tags $PORTAL_REMOTE_BASE $PORTAL_REMOTE_BASE_BRANCH
 
 git clean -dfx
 
+ant -f build-working-dir.xml
+
 if [ ! -z $SUBREPO_NAME ]
 then
 	remote_base=$SUBREPO_REMOTE_BASE
