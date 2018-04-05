@@ -92,7 +92,7 @@ git fetch --no-tags $PORTAL_REMOTE_BASE $PORTAL_REMOTE_BASE_BRANCH
 
 git clean -dfx
 
-if echo $PORTAL_REMOTE_BASE_BRANCH | grep -qs "-private"
+if echo $PORTAL_REMOTE_BASE_BRANCH | grep -qs -e "-private"
 then
 	git fetch --no-tags $PORTAL_REMOTE_BASE ${PORTAL_REMOTE_BASE_BRANCH//-private}
 fi
