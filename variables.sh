@@ -5,7 +5,7 @@
 # -----------------------------------------------------------------------------
 
 DESIRED_HOME_DIR_NAME=7.0.x
-FIX_PACK=de/liferay-fix-pack-de-16
+FIX_PACK=de/liferay-fix-pack-de-32
 INDEX_NAME=_DEFAULT_INDEX_NAME_
 LIFERAY_HOME_PARENT_DIR=/path/to/home/parent
 PORTAL_REPO_DIR=/path/to/portal/repo
